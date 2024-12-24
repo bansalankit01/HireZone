@@ -1,15 +1,17 @@
-let navbar = document.querySelector('.header .flex .navbar');
 
-document.querySelector('#menu-btn').onclick = () => {
-    navbar.classList.toggle('active');
-}
+window.addEventListener('scroll', function () {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled'); 
+    } else {
+        header.classList.remove('scrolled'); 
+    }
+});
 
-window.onscroll = () => {
-    navbar.classList.remove('active')
-}
 
-document.querySelectorAll('input[type="number"]').forEach(inputNumber => {
-    inputNumber.oninput = () => {
-        if(inputNumber.value.length > inputNumber.maxLength) inputNumber.value = inputNumber.value.slice(0, inputNumber.maxLength)
-    };
+const menuBtn = document.querySelector('#menu-btn');
+const navbar = document.querySelector('.navbar');
+
+menuBtn.addEventListener('click', () => {
+    navbar.classList.toggle('active'); 
 });

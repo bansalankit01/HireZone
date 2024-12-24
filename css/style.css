@@ -51,7 +51,7 @@ html {
 }
 
 body {
-    background-color: #011121;
+    background-color: var(--white);
 }
 
 section {
@@ -64,7 +64,7 @@ section {
     text-align: center;
     margin-bottom: 2rem;
     font-size: 3rem;
-    color: rgb(6, 238, 6);
+    color: var(--black);
     text-transform: capitalize;
     padding: 1rem 0;
 }
@@ -74,7 +74,7 @@ section {
     margin-top: 8rem;
     margin-bottom: 2rem;
     font-size: 3rem;
-    color: rgb(6, 238, 6);
+    color: var(--black);
     text-transform: capitalize;
     padding: 1rem 0;
 }
@@ -84,7 +84,7 @@ section {
     margin-top: 2rem;
     margin-bottom: 2rem;
     font-size: 3rem;
-    color: rgb(6, 238, 6);
+    color: var(--black);
     text-transform: capitalize;
     padding: 1rem 0;
 }
@@ -94,7 +94,27 @@ section {
     margin-top: 8rem;
     margin-bottom: 2rem;
     font-size: 3rem;
-    color: rgb(6, 238, 6);
+    color: var(--black);
+    text-transform: capitalize;
+    padding: 1rem 0;
+}
+
+.heading4 {
+    text-align: center;
+    margin-top: 8rem;
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    color: var(--black);
+    text-transform: capitalize;
+    padding: 1rem 0;
+}
+
+.heading5 {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    color: var(--black);
     text-transform: capitalize;
     padding: 1rem 0;
 }
@@ -115,15 +135,32 @@ section {
     border: 4px solid rgb(255, 136, 0);
 }
 
+.section-title2 {
+    /* border-top: 1rem solid var(--main-color);
+    border-bottom: 1rem solid var(--main-color); */
+    background-color: var(--black);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 2rem;
+    font-size: 6rem;
+    text-transform: capitalize;
+    position: absolute;
+    width: 50%;
+    margin-top: 2.5rem;
+    margin-left: 38rem;
+    border: 4px solid rgb(255, 136, 0);
+}
+
 .section-title-about {
-    background: url('https://intelcorp.scene7.com/is/image/intelcorp/vpro-hybrid-architecture-webinar-marquee-images:1920-1080?wid=1648&hei=927&fmt=webp-alpha') no-repeat;
+    background: url('https://intelcorp.scene7.com/is/image/intelcorp/vpro-hybrid-architecture-webinar-marquee-images:1920-1080?wid=1648&hei=927&fmt=webp-alpha') no-repeat center center;
+    background-size: cover; 
     background-attachment: fixed;
     background-blend-mode: color;
     height: 75vh;
-    color: rgb(2, 21, 40);
-    text-align: center;
-    padding: 6rem 2rem;
-    font-size: 6rem;
+    color: rgb(11, 11, 11);
+    text-align: right;
+    padding: 20rem 20rem;
+    font-size: 8rem;
     text-transform: capitalize;
 }
 
@@ -137,14 +174,28 @@ section {
     top: 0;
 }
 
+.section-title-companies {
+    background: url('https://www.tothenew.com/blog/wp-content/themes/ttn/images/banner/blog_banner.png') no-repeat center center;
+    background-size: cover; 
+    background-attachment: fixed;
+    color: rgb(221, 212, 212);
+    text-align: center;
+    padding: 25rem 20rem;
+    font-size: 5rem;
+    text-transform: capitalize;
+    height: 75vh; 
+
+}
+
 .section-title-contact {
-    background: url('https://www.tothenew.com/cms-assets/s3fs-public/styles/banner_image_inner_small/public/2020-09/Contact-Us_banner_0_0.jpg?itok=OTeN_3nd'), no-repeat;
+    background: url('https://www.tothenew.com/cms-assets/s3fs-public/styles/banner_image_inner_small/public/2020-09/Contact-Us_banner_0_0.jpg?itok=OTeN_3nd'), no-repeat center center;
+    background-size: cover;
     background-attachment: fixed;
     background-blend-mode: color;
     height: 65vh;
-    color: rgb(28, 27, 27);
-    text-align: center;
-    padding: 10rem 2rem;
+    color: rgb(11, 11, 11);
+    text-align: left;
+    padding: 20rem 20rem;
     font-size: 6rem;
     text-transform: capitalize;
 
@@ -156,7 +207,7 @@ section {
     left: 0;
     width: 100%;
     height: 65%;
-    background-color: rgba(1, 21, 32, 0.604);
+    background-color: rgba(64, 65, 66, 0.604);
     top: 0;
 }
 
@@ -177,6 +228,24 @@ section {
     background-color: var(--black);
 }
 
+.btn1 {
+    display: inline-block;
+    margin-top: 1rem;
+    margin-left: 45rem;
+    padding: 1rem 3rem;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: var(--white);
+    background-color: var(--main-color);
+    border-radius: .5rem;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.btn1:hover {
+    background-color: var(--black);
+}
+
 .flex-btn {
     display: flex;
     align-items: center;
@@ -186,26 +255,23 @@ section {
 }
 
 header {
-    /* position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: var(--white);
-    box-shadow: var(--box-shadow);
-    z-index: 1000; */
-
-    background-color: transparent;
-    /* #011121 */
-    position: absolute;
+    background-color: transparent; 
+    position: fixed;
     z-index: 100;
     left: 0;
     top: 0;
-    width: 100%; 
+    width: 100%;
+    padding: 1rem 2rem;
     transition: all ease 600ms;
+    box-shadow: none; 
+}
+
+header.scrolled {
+    background-color: #7fb9e9; 
+    box-shadow: var(--box-shadow); 
 }
 
 header .flex {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -225,27 +291,27 @@ header .flex {
 }
 
 .header .flex .logo i {
-    margin-right: .5rem;
+    margin-right: 0.5rem;
     color: var(--white);
 }
 
 .header .flex .navbar a {
-    display: inline-block;
     padding: 1rem 1.5rem;
     font-size: 1.8rem;
     font-weight: bolder;
     color: var(--white);
-    border-radius: .5rem;
     text-transform: capitalize;
+    border-radius: 0.5rem;
+    text-decoration: none;
 }
 
 .header .flex .navbar a:hover {
-    background-color: var(--main-color);
-    color: var(--white);
+    background-color: var(--white);
+    color: var(--main-color);
 }
 
 .home-container {
-    background: url('https://www.tothenew.com/cms-assets/s3fs-public/styles/banner_image/public/2023-09/gartner-banner_1.png?itok=we9FBSbH'), no-repeat;
+    background: url('https://www.tothenew.com/cms-assets/s3fs-public/styles/banner_image/public/2023-09/gartner-banner_1.png?itok=we9FBSbH'), no-repeat center center;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -260,17 +326,17 @@ header .flex {
 }
 
 .home-container .home form {
-    background-color: #011121e9;
+    background-color: #255584a9;
     width: 50rem;
     border-radius: .5rem;
     padding: 2rem;
     text-align: center;
-    border: 2px solid rgba(255, 0, 0, 0.737);
+    border: 3px solid rgba(255, 0, 0, 0.737);
 }
 
 .home-container .home form h3 {
     font-size: 2.5rem;
-    color: var(--black);
+    color: black;
     margin-bottom: 1rem;
     text-transform: capitalize
 }
@@ -278,7 +344,7 @@ header .flex {
 .home-container .home form p {
     text-align: left;
     font-size: 1.6rem;
-    color: var(--light-color);
+    color: var(--white);
     padding-top: 1rem;
 }
 
@@ -290,13 +356,13 @@ header .flex {
     width: 100%;
     border-radius: .5rem;
     margin: 1rem 0;
-    background-color: #051a2fca;
+    background-color: #cacdd1ca;
     padding: 1.4rem;
     font-size: 1.8rem;
     color: var(--black);
 }
 
-.category .box-container { 
+/* .category .box-container { 
     display: grid;
     grid-template-columns: repeat(auto-fit, 25rem);
     justify-content: center;
@@ -351,7 +417,7 @@ header .flex {
 
 .category .box-container .box:hover i {
     background-color: var(--white);
-}
+} */
 
 .jobs-container .box-container {
     display: grid;
@@ -362,7 +428,7 @@ header .flex {
 }
 
 .jobs-container .box-container .box {
-    background-color: #0c243dfc;
+    background: linear-gradient(to bottom, #ccffff 0%, #ccccff 100%);
     border-radius: .5rem;
     border: var(--border);
     padding: 2rem;
@@ -385,7 +451,7 @@ header .flex {
 
 .jobs-container .box-container .box .company h3 {
     font-size: 1.8rem;
-    color: var(--white);
+    color: var(--black);
     text-overflow: ellipsis;
     overflow-x: hidden;
     text-transform: capitalize;
@@ -393,13 +459,13 @@ header .flex {
 }
 
 .jobs-container .box-container .box .company p {
-    color: var(--light-color);
+    color: var(--black);
     font-size: 1.6rem;
 }
 
 .jobs-container .box-container .box .job-title {
     font-size: 2rem;
-    color: rgb(122, 122, 122);
+    color: var(--black);
     text-transform: capitalize;
     overflow-x: hidden;
     text-overflow: ellipsis;
@@ -408,7 +474,7 @@ header .flex {
 .jobs-container .box-container .box .location {
     padding: .7rem 0;
     font-size: 1.6rem;
-    color: var(--light-color);
+    color: var(--black);
 }
 
 .jobs-container .box-container .box .location i {
@@ -426,7 +492,7 @@ header .flex {
 .jobs-container .box-container .box .tags p {
     padding: 1.2rem;
     border-radius: .5rem;
-    background-color: rgb(163, 161, 161);
+    background-color: var(--white);
     font-size: 1.6rem;
     color: var(--black);
 }
@@ -437,7 +503,7 @@ header .flex {
 }
 
 .jobs-container .box-container .box .fa-heart {
-    background-color: rgb(163, 161, 161);
+    background-color: var(--white);
     border-radius: .5rem;
     color: var(--black);
     font-size: 1.8rem;
@@ -458,7 +524,7 @@ header .flex {
 }
 
 .about .box {
-    background-color: rgb(187, 254, 245);
+    background: linear-gradient(to bottom, #ccffff 0%, #ccccff 100%);
     border-radius: .5rem;
     border: var(--border);
     padding: 2rem;
@@ -491,7 +557,7 @@ header .flex {
 }
 
 .reviews .box-container .box {
-    background-color: rgb(187, 254, 245);
+    background: linear-gradient(to bottom, #ccffff 0%, #ccccff 100%);
     box-shadow: var(--box-shadow);
     border: var(--border);
     border-radius: .5rem;
@@ -505,7 +571,6 @@ header .flex {
 .reviews .box-container .box:hover {
     cursor: pointer;
     transform: rotate(3deg) scale(1.1);
-    background-color: #ffe0b3; 
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -557,6 +622,87 @@ header .flex {
 }
 
 .reviews .box-container .box .user span {
+   color: var(--light-color);
+   font-size: 1.6rem;
+}
+
+.company .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 35rem);
+    gap: 1.5rem;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 12rem;
+}
+
+.company .box-container .box {
+    background: linear-gradient(to bottom, #ccffff 0%, #ccccff 100%);
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    border-radius: .5rem;
+    padding: 2rem;
+    margin-top: 3rem;
+    transition: transform 0.4s cubic-bezier(0.42, 0, 0.58, 1), 
+                background-color 0.3s ease-in, 
+                box-shadow 0.3s ease-in-out;
+}
+
+.company .box-container .box:hover {
+    cursor: pointer;
+    transform: rotate(3deg) scale(1.1);
+    background-color: #ffe0b3; 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.company .box-container .box .stars {
+    margin-bottom: 1.5rem;
+}
+
+
+.company .box-container .box .stars i {
+    color: rgb(236, 150, 12);
+    font-size: 1.8rem;
+}
+
+.company .box-container .box .title {
+    font-size: 2rem;
+    color: var(--black);
+    /* text-align: right; */
+    text-transform: capitalize;
+    margin-top: 1rem;
+}
+
+.company .box-container .box p {
+    font-size: 1.6rem;
+    color: var(--light-color);
+    /* text-align: right; */
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
+.company .box-container .box .user {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    align-items: center;
+}
+
+.company .box-container .box .user img {
+    height: 7rem;
+    width: 7rem;
+    border-radius: 5%;
+    margin-top: -1rem;
+    object-fit: cover;
+}
+
+.company .box-container .box .user h3 {
+   font-size: 2rem;
+   color: var(--black);
+   margin-bottom: .5rem;
+   text-transform: capitalize;
+}
+
+.company .box-container .box .user span {
    color: var(--light-color);
    font-size: 1.6rem;
 }
@@ -662,7 +808,7 @@ header .flex {
 }
 
 .job-details .details {
-    background-color: #051a2fca;
+    background: linear-gradient(to bottom, #ccffff 0%, #ccccff 100%);
     border-radius: .5rem;
     border: var(--border);
     padding: 2rem;
@@ -673,7 +819,7 @@ header .flex {
 .job-details .details h3 {
     margin-bottom: 1rem;
     font-size: 2rem;
-    color: rgb(8, 124, 248);
+    color: var(--black);
     text-transform: capitalize;
     overflow-x: hidden;
     text-overflow: ellipsis;
@@ -682,7 +828,7 @@ header .flex {
 .job-details .details .job-info a {
     display: block;
     font-size: 1.6rem;
-    color: var(--main-color);
+    color: blue;
     margin: .5rem 0;
 }
 
@@ -693,7 +839,7 @@ header .flex {
 .job-details .details .job-info p {
     padding: 1rem 0;
     font-size: 1.6rem;
-    color: var(--white);
+    color: var(--light-color);
 }
 
 .job-details .details .basic-details {
@@ -705,7 +851,7 @@ header .flex {
 }
 
 .job-details .details .basic-details p {
-    color: var(--white);
+    color: var(--light-color);
     padding-bottom: 2rem;
     font-size: 1.6rem;
 }
@@ -717,19 +863,19 @@ header .flex {
 .job-details .details ul li {
     padding: 1rem 0;
     font-size: 1.6rem;
-    color: var(--white);
+    color: var(--light-color);
     margin-left: 3rem;
 }
 
 .job-details .details .description {
     margin-top: 1.6rem;
-    color: var(--white);
+    color: var(--light-color);
     line-height: 1.8;
     padding: .5rem 0;
 }
 
 .job-details .details .save {
-    background-color: rgb(163, 161, 161);
+    background-color: var(--white);
     border-radius: .5rem;
     padding: 1rem 1.5rem;
     cursor: pointer;
@@ -824,7 +970,7 @@ header .flex {
 }
 
 .contact .box-container .box {
-    background-color: #04192c;
+    background-color: var(--light-bg);
     border: var(--border);
     border: .5rem;
     box-shadow: var(--box-shadow);
@@ -847,13 +993,13 @@ header .flex {
     display: block;
     padding-top: .5rem;
     font-size: 1.6rem;
-    color: var(--light-color);
+    color: var(--black);
     line-height: 1.5;
 }
 
 .contact form {
     margin-top: 2rem;
-    background-color: #051a2fca;
+    background-color: rgb(167, 164, 164);
     border: var(--border);
     border: .5rem;
     box-shadow: var(--box-shadow);
@@ -864,7 +1010,7 @@ header .flex {
 
 .contact form h3 {
     font-size: 2.5rem;
-    color: var(--white);
+    color: var(--black);
     text-transform: capitalize;
     margin-bottom: 1rem;
 }
@@ -883,9 +1029,9 @@ header .flex {
     width: 100%;
     border-radius: .5rem;
     padding: 1.4rem;
-    color: var(--white);
+    color: var(--black);
     font-size: 1.8rem;
-    background-color: #072848ca;
+    background-color: var(--light-bg);
     margin: 1rem 0;
 }
 
@@ -893,7 +1039,7 @@ header .flex {
     text-align: left;
     font-size: 1.6rem;
     padding-top: 1rem;
-    color: var(--white);
+    color: var(--black);
 }
 
 .contact form p span {
@@ -906,7 +1052,7 @@ header .flex {
 }
 
 .account-form-container {
-    background: url('https://img.freepik.com/premium-photo/business-man-working-laptop-with-job-search-screen_218381-8578.jpg'), rgba(28, 27, 27, 0.518) no-repeat;
+    background: url('https://www.tothenew.com/cms-assets/s3fs-public/styles/banner_image/public/2023-09/gartner-banner_1.png?itok=we9FBSbH'), rgba(28, 27, 27, 0.518) no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -922,17 +1068,17 @@ header .flex {
 }
 
 .account-form-container .account-form form {
-    background-color: #011121e9;
-    border-radius: .5rem;
-    padding: 3rem 2rem;
+    background-color: #255584a9;
     width: 50rem;
+    border-radius: .5rem;
+    padding: 2rem;
     text-align: center;
-    border: 2px solid rgba(255, 0, 0, 0.797);
+    border: 3px solid rgba(255, 0, 0, 0.737);
 }
 
 .account-form-container .account-form form h3{
     font-size: 2.5rem;
-    color: var(--black);
+    color: black;
     text-transform: capitalize;
     margin-bottom: 1rem;
 }
@@ -942,14 +1088,14 @@ header .flex {
     margin: 1rem 0;
     font-size: 1.8rem;
     padding: 1.4rem;
-    background-color: #051a2fca;
+    background-color: #cacdd1ca;
     border-radius: .5rem;
 }
 
 .account-form-container .account-form form p {
     padding: 1rem 0;
     font-size: 1.6rem;
-    color: var(--light-color);
+    color: black;
 }
 
 .account-form-container .account-form form p a {
@@ -981,7 +1127,7 @@ header .flex {
     display: block;
     padding: 1rem 0;
     font-size: 1.6rem;
-    color: var(--light-color);
+    color: var(--black);
 }
 
 .footer .grid .box a i {
@@ -997,9 +1143,9 @@ header .flex {
     text-align: center;
     padding: 3rem 2rem;
     border-top: var(--border);
-    background-color: #011121;
+    background-color: #7fb9e9;
     font-size: 2rem;
-    color: var(--light-color);
+    color: var(--black);
     line-height: 1.5;
 }
 
@@ -1062,6 +1208,72 @@ header .flex {
         font-size: 4rem;
         padding: 4rem 2rem;
     }
+
+    .section-title2 {
+        font-size: 4rem;
+        padding: 1rem 2rem;
+        margin-left: 4rem;
+        width: 80%;
+    }
+
+    .btn1 {
+        display: inline-block;
+        margin-top: 1rem;
+        margin-left: 7rem;
+        padding: 1rem 3rem;
+        cursor: pointer;
+        font-size: 1.8rem;
+        color: var(--white);
+        background-color: var(--main-color);
+        border-radius: .5rem;
+        text-transform: capitalize;
+        text-align: center;
+    }
+
+    .btn1:hover {
+        background-color: var(--black);
+    }
+    
+    .section-title-companies {
+        background-attachment: scroll; 
+        padding: 15rem 2rem; 
+        font-size: 3rem; 
+        height: 50vh;
+    }
+
+    .section-title-about {
+        background-attachment: scroll; 
+        padding: 12rem 2rem; 
+        font-size: 4rem; 
+        height: 40vh;
+    }
+
+    .section-title-about::before {
+        position: absolute;
+        content: " ";
+        left: 0;
+        width: 100%;
+        height: 40%;
+        background-color: rgba(64, 65, 66, 0.604);
+        top: 0;
+    }
+
+    .section-title-contact {
+        background-attachment: scroll; 
+        padding: 14rem 2rem; 
+        font-size: 4rem; 
+        height: 40vh;
+    }
+
+    .section-title-contact::before {
+        position: absolute;
+        content: " ";
+        left: 0;
+        width: 100%;
+        height: 40%;
+        background-color: rgba(64, 65, 66, 0.604);
+        top: 0;
+    }
 }
 
 @media (max-width:450px) {
@@ -1073,11 +1285,15 @@ header .flex {
     .section-title {
         font-size: 3rem;
         margin-left: 4rem;
-        width: 80%;
+        width: 70%;
     }
 
     .reviews .box-container {
-        margin-top: 13.4rem;
+        margin-top: 13rem;
+    }
+
+    .company .box-container {
+        margin-top: 13rem;
     }
 
 }
