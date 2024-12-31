@@ -188,17 +188,11 @@ section {
 }
 
 .section-title-contact {
-    background: url('https://www.tothenew.com/cms-assets/s3fs-public/styles/banner_image_inner_small/public/2020-09/Contact-Us_banner_0_0.jpg?itok=OTeN_3nd'), no-repeat center center;
-    background-size: cover;
-    background-attachment: fixed;
-    background-blend-mode: color;
-    height: 65vh;
-    color: rgb(11, 11, 11);
-    text-align: left;
-    padding: 20rem 20rem;
-    font-size: 6rem;
-    text-transform: capitalize;
-
+    background: url('https://png.pngtree.com/background/20240519/original/pngtree-finance-concept-contact-us-on-wall-background-overlapped-leader-backdrop-photo-picture-image_9009296.jpg') no-repeat center center;
+    background-size: cover; 
+    background-attachment: fixed; 
+    height: 75vh; 
+    position: relative;
 }
 
 .section-title-contact::before {
@@ -206,9 +200,10 @@ section {
     content: " ";
     left: 0;
     width: 100%;
-    height: 65%;
-    background-color: rgba(64, 65, 66, 0.604);
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.284); 
     top: 0;
+    z-index: 1; 
 }
 
 .btn {
@@ -1052,7 +1047,7 @@ header .flex {
 }
 
 .account-form-container {
-    background: url('https://www.tothenew.com/cms-assets/s3fs-public/styles/banner_image/public/2023-09/gartner-banner_1.png?itok=we9FBSbH'), rgba(28, 27, 27, 0.518) no-repeat;
+    background: url('https://www.tothenew.com/cms-assets/s3fs-public/styles/banner_image/public/2023-09/gartner-banner_1.png?itok=we9FBSbH'), no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1260,16 +1255,16 @@ header .flex {
         left: 0;
         width: 100%;
         height: 30%;
-        background-color: rgba(64, 65, 66, 0.604);
+        background-color: rgba(64, 65, 66, 0.177);
         top: 0;
     }
 
     .section-title-contact {
-        background-attachment: scroll; 
-        padding: 20rem 4rem; 
-        font-size: 4rem; 
+        background: url('https://media.istockphoto.com/id/1450058572/photo/businessman-using-a-laptop-and-touching-on-virtual-screen-contact-icons-consists-of-telephone.jpg?s=612x612&w=0&k=20&c=R5wzCGHu6ZS-8EQpJ2Z1tkSbKGGdJH4apVhFM18EXSM='), no-repeat center;
+        background-size: cover;
+        background-attachment: scroll;
         height: 40vh;
-        font-weight: bolder;
+
     }
 
     .section-title-contact::before {
@@ -1278,8 +1273,16 @@ header .flex {
         left: 0;
         width: 100%;
         height: 40%;
-        background-color: rgba(64, 65, 66, 0.604);
+        background-color: rgba(64, 65, 66, 0);
         top: 0;
+    }
+
+    .home-container {
+        background: url('https://www.tothenew.com/cms-assets/s3fs-public/styles/banner_image/public/2023-09/gartner-banner_1.png?itok=we9FBSbH'), no-repeat center center;
+        /* background-size: cover; */
+        background-position: center;
+        /* background-attachment: fixed; */
+        /* background-blend-mode: color; */
     }
 
     .home-container .home {
@@ -1287,6 +1290,14 @@ header .flex {
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .account-form-container {
+        background: url('https://www.tothenew.com/cms-assets/s3fs-public/styles/banner_image/public/2023-09/gartner-banner_1.png?itok=we9FBSbH'), no-repeat;
+        /* background-size: cover; */
+        background-position: center;
+        /* background-attachment: fixed; */
+        /* background-blend-mode: color; */
     }
 
     .account-form-container .account-form {
