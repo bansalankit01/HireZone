@@ -347,7 +347,7 @@ header .flex {
 }
 
 .home-container .home {
-    min-height: 80vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1398,7 +1398,7 @@ header .flex {
     
 
     .home-container .home {
-        min-height: 50vh;
+        /* min-height: 50vh; */
         display: flex;
         align-items: center;
         justify-content: center;
