@@ -309,7 +309,7 @@ header .flex {
 }
 
 .header .flex .logo {
-    font-size: 2.2rem;
+    font-size: 2.8rem;
     color: rgb(9, 9, 9);
     font-weight: bolder;
 }
@@ -317,7 +317,9 @@ header .flex {
 .header .flex .logo i {
     margin-right: 0.5rem;
     font-size: 3rem;
-    color: rgb(17, 236, 196);
+  background: -webkit-linear-gradient(#a003f5, #07eacf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .header .flex .navbar a {
@@ -1113,7 +1115,7 @@ header .flex {
 }
 
 .account-form-container .account-form {
-    min-height: 75vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1319,7 +1321,7 @@ header .flex {
     .section-title-companies {
         background-attachment: scroll; 
         padding: 15rem 1rem; 
-        font-size: 4rem; 
+        font-size: 3.5rem;
         height: 30vh;
     }
 
@@ -1375,8 +1377,7 @@ header .flex {
         background-position: center;
         /* background-attachment: fixed; */
         background-blend-mode: color;
-        width: 90%;
-        margin-left: 3rem;
+        width: 100%;
     }
 
     .fielddiv {
@@ -1389,6 +1390,10 @@ header .flex {
         width: 90%; 
         margin: 0; 
         margin-left: 2rem;
+    }
+
+    .home-container .home form {
+        width: 90%;
     }
     
 
@@ -1412,13 +1417,14 @@ header .flex {
         /* background-blend-mode: color; */
     }
 
+
     .account-form-container .account-form {
         min-height: 50vh;
         width: 90%;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding-top: 5rem;
+        padding-top: 10rem;
     }
 
     .footer .grid {
