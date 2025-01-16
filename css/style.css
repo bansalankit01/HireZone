@@ -337,6 +337,7 @@ header .flex {
 
 .home-container {
     /* background: url('https://www.tothenew.com/cms-assets/s3fs-public/styles/banner_image/public/2023-09/gartner-banner_1.png?itok=we9FBSbH'), no-repeat center center; */
+    background-color: aliceblue;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1104,6 +1105,7 @@ header .flex {
 
 .account-form-container {
     /* background: url('https://www.tothenew.com/cms-assets/s3fs-public/styles/banner_image/public/2023-09/gartner-banner_1.png?itok=we9FBSbH'), no-repeat; */
+    background-color: aliceblue;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
