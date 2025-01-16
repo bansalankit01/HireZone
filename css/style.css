@@ -339,7 +339,7 @@ header .flex {
 
 .home-container {
     /* background: url('https://www.tothenew.com/cms-assets/s3fs-public/styles/banner_image/public/2023-09/gartner-banner_1.png?itok=we9FBSbH'), no-repeat center center; */
-    background-color: aliceblue;
+    background-color: rgb(223, 240, 255);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -354,14 +354,14 @@ header .flex {
 }
 
 .home-container .home form {
-    /* background-color: #255584a9; */
+    background-color: #fff;
     width: 100rem;
     border-radius: .5rem;
     padding: 2rem;
     text-align: center;
     border: 2px solid rgba(42, 41, 41, 0.737);
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    margin-top: 5rem;
+    margin-top: rem;
 }
 
 .home-container .home form h3 {
@@ -476,7 +476,8 @@ header .flex {
 }
 
 .jobs-container .box-container .box {
-    background: linear-gradient(to bottom, #ccffff 0%, #ccccff 100%);
+    /* background: linear-gradient(to bottom, #ccffff 0%, #ccccff 100%); */
+    background: rgb(223, 240, 255);
     border-radius: .5rem;
     border: var(--border);
     padding: 2rem;
@@ -572,7 +573,8 @@ header .flex {
 }
 
 .about .box {
-    background: linear-gradient(to bottom, #ccffff 0%, #ccccff 100%);
+    /* background: linear-gradient(to bottom, #ccffff 0%, #ccccff 100%); */
+    background: rgb(223, 240, 255);
     border-radius: .5rem;
     border: var(--border);
     padding: 2rem;
@@ -605,7 +607,8 @@ header .flex {
 }
 
 .reviews .box-container .box {
-    background: linear-gradient(to bottom, #ccffff 0%, #ccccff 100%);
+    /* background: linear-gradient(to bottom, #ccffff 0%, #ccccff 100%); */
+    background: rgb(223, 240, 255);
     box-shadow: var(--box-shadow);
     border: var(--border);
     border-radius: .5rem;
@@ -684,7 +687,8 @@ header .flex {
 }
 
 .company .box-container .box {
-    background: linear-gradient(to bottom, #ccffff 0%, #ccccff 100%);
+    /* background: linear-gradient(to bottom, #ccffff 0%, #ccccff 100%); */
+    background: rgb(223, 240, 255);
     box-shadow: var(--box-shadow);
     border: var(--border);
     border-radius: .5rem;
@@ -856,7 +860,8 @@ header .flex {
 }
 
 .job-details .details {
-    background: linear-gradient(to bottom, #ccffff 0%, #ccccff 100%);
+    /* background: linear-gradient(to bottom, #ccffff 0%, #ccccff 100%); */
+    background: rgb(223, 240, 255);
     border-radius: .5rem;
     border: var(--border);
     padding: 2rem;
@@ -1107,7 +1112,7 @@ header .flex {
 
 .account-form-container {
     /* background: url('https://www.tothenew.com/cms-assets/s3fs-public/styles/banner_image/public/2023-09/gartner-banner_1.png?itok=we9FBSbH'), no-repeat; */
-    background-color: aliceblue;
+    background-color: rgb(223, 240, 255);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1124,7 +1129,7 @@ header .flex {
 }
 
 .account-form-container .account-form form {
-    /* background-color: #255584a9; */
+    background-color: #fff;
     width: 50rem;
     border-radius: .5rem;
     padding: 2rem;
