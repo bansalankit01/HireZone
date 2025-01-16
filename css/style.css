@@ -223,6 +223,25 @@ section {
     background-color: var(--black);
 }
 
+.btn2 {
+    display: inline-block;
+    margin-top: 4.5rem;
+    margin-left: 3rem;
+    height: 49%;
+    padding: 1rem 3rem;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: var(--white);
+    background-color: var(--main-color);
+    border-radius: .5rem;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.btn2:hover {
+    background-color: var(--black);
+}
+
 .btn1 {
     display: inline-block;
     margin-top: 1rem;
@@ -274,27 +293,27 @@ header .flex {
 
 #menu-btn {
     font-size: 3rem;
-    color: var(--white);
+    color: var(--black);
     cursor: pointer;
     display: none;
 }
 
 .header .flex .logo {
     font-size: 2.2rem;
-    color: var(--white);
+    color: var(--black);
     font-weight: bolder;
 }
 
 .header .flex .logo i {
     margin-right: 0.5rem;
-    color: var(--white);
+    color: var(--black);
 }
 
 .header .flex .navbar a {
     padding: 1rem 1.5rem;
     font-size: 1.8rem;
     font-weight: bolder;
-    color: var(--white);
+    color: var(--black);
     text-transform: capitalize;
     border-radius: 0.5rem;
     text-decoration: none;
@@ -303,10 +322,11 @@ header .flex {
 .header .flex .navbar a:hover {
     background-color: var(--white);
     color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
 }
 
 .home-container {
-    background: url('https://www.tothenew.com/cms-assets/s3fs-public/styles/banner_image/public/2023-09/gartner-banner_1.png?itok=we9FBSbH'), no-repeat center center;
+    /* background: url('https://www.tothenew.com/cms-assets/s3fs-public/styles/banner_image/public/2023-09/gartner-banner_1.png?itok=we9FBSbH'), no-repeat center center; */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -321,17 +341,19 @@ header .flex {
 }
 
 .home-container .home form {
-    background-color: #255584a9;
-    width: 50rem;
+    /* background-color: #255584a9; */
+    width: 100rem;
     border-radius: .5rem;
     padding: 2rem;
     text-align: center;
-    border: 3px solid rgba(255, 0, 0, 0.737);
+    border: 2px solid rgba(42, 41, 41, 0.737);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    margin-top: 8rem;
 }
 
 .home-container .home form h3 {
     font-size: 2.5rem;
-    color: black;
+    color: var(--black);
     margin-bottom: 1rem;
     text-transform: capitalize
 }
@@ -339,8 +361,8 @@ header .flex {
 .home-container .home form p {
     text-align: left;
     font-size: 1.6rem;
-    color: var(--white);
-    padding-top: 1rem;
+    color: var(--black);
+    padding-top: 2rem;
 }
 
 .home-container .home form p span {
@@ -351,10 +373,28 @@ header .flex {
     width: 100%;
     border-radius: .5rem;
     margin: 1rem 0;
-    background-color: #cacdd1ca;
     padding: 1.4rem;
     font-size: 1.8rem;
     color: var(--black);
+    border: 1px solid black;
+}
+
+.home-container .home form .input:hover {
+    border-bottom: 3px solid var(--main-color);
+}
+
+.fielddiv {
+    display: flex;
+}
+
+.field1 {
+    width: 40%;
+    margin-right: 10rem;
+}
+
+.field2 {
+    width: 40%;
+    margin-left: -9rem;
 }
 
 /* .category .box-container { 
@@ -1233,6 +1273,25 @@ header .flex {
     .btn1:hover {
         background-color: var(--black);
     }
+
+    .btn2 {
+        display: inline-block;
+        margin-top: 2rem;
+        margin-left: 3rem;
+        height: 49%;
+        padding: 1rem 3rem;
+        cursor: pointer;
+        font-size: 1.8rem;
+        color: var(--white);
+        background-color: var(--main-color);
+        border-radius: .5rem;
+        text-transform: capitalize;
+        text-align: center;
+    }
+    
+    .btn2:hover {
+        background-color: var(--black);
+    }
     
     .section-title-companies {
         background-attachment: scroll; 
@@ -1278,12 +1337,27 @@ header .flex {
     }
 
     .home-container {
-        background: url('https://www.tothenew.com/cms-assets/s3fs-public/styles/banner_image/public/2023-09/gartner-banner_1.png?itok=we9FBSbH'), no-repeat center center;
+        /* background: url('https://www.tothenew.com/cms-assets/s3fs-public/styles/banner_image/public/2023-09/gartner-banner_1.png?itok=we9FBSbH'), no-repeat center center; */
         /* background-size: cover; */
         background-position: center;
         /* background-attachment: fixed; */
-        /* background-blend-mode: color; */
+        background-blend-mode: color;
+        width: 90%;
+        margin-left: 3rem;
     }
+
+    .fielddiv {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .field1, 
+    .field2 {
+        width: 90%; 
+        margin: 0; 
+        margin-left: 2rem;
+    }
+    
 
     .home-container .home {
         min-height: 50vh;
