@@ -347,7 +347,7 @@ header .flex {
 }
 
 .home-container .home {
-    min-height: 70vh;
+    min-height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -361,7 +361,7 @@ header .flex {
     text-align: center;
     border: 2px solid rgba(42, 41, 41, 0.737);
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    margin-top: 8rem;
+    margin-top: 5rem;
 }
 
 .home-container .home form h3 {
