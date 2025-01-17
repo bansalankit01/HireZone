@@ -1299,7 +1299,7 @@ header .flex {
   .btn2 {
     display: inline-block;
     margin-top: 2rem;
-    margin-left: 3rem;
+    margin-left: -2rem;
     height: 49%;
     padding: 1rem 3rem;
     cursor: pointer;
@@ -1392,7 +1392,6 @@ header .flex {
   .home-container .home form {
     width: 90%;
     margin-left: 1rem;
-    margin-top: -1rem;
   }
 
   .home-container .home {
