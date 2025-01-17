@@ -1255,6 +1255,10 @@ header .flex {
     padding: 1.5rem 2rem;
   }
 
+  .header .flex .navbar a:hover {
+    border-bottom: none;
+  }
+
   .category .box-container {
     grid-template-columns: repeat(auto-fit, 16.5rem);
   }
