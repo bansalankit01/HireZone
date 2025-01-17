@@ -1394,8 +1394,8 @@ header .flex {
   }
 
   .jobs-container .box-container .box {
-    width: 120%;
-    margin-left: -3.5rem;
+    width: 118%;
+    margin-left: -3rem;
   }
 
   .home-container .home form {
@@ -1416,7 +1416,7 @@ header .flex {
   }
 
   .reviews .box-container .box {
-    width: 120%;
+    width: 118%;
     margin-left: -3rem;
   }
 
@@ -1426,7 +1426,7 @@ header .flex {
   }
 
   .contact .box-container .box {
-    width: 120%;
+    width: 118%;
     margin-left: -3rem;
   }
 
@@ -1484,7 +1484,6 @@ header .flex {
   .section-title2 {
     margin-left: 5rem;
     width: 83%;
-    margin-top: 4.5rem;
   }
 
   .reviews .box-container {
