@@ -60,22 +60,57 @@
 
         </div>
 
-        <form action="" method="post">
-            <h3>drop your message</h3>
+        <form action="" method="post" onsubmit="showCustomAlert(event)">
+            <h3>Drop your message</h3>
             <div class="flex">
-                <div class="box">
-                    <p>name <span>*</span></p>
-                    <input type="text" name="name" required maxlength="20" placeholder="enter your name" class="input">
-                </div>
-                <div class="box">
-                    <p>email <span>*</span></p>
-                    <input type="email" name="email" required maxlength="50" placeholder="enter your email" class="input">
-                </div>
+              <div class="box">
+                <p>name <span>*</span></p>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  required
+                  maxlength="20"
+                  placeholder="Enter your name"
+                  class="input"
+                />
+              </div>
+              <div class="box">
+                <p>email <span>*</span></p>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  required
+                  maxlength="50"
+                  placeholder="Enter your email"
+                  class="input"
+                />
+              </div>
             </div>
             <p>message <span>*</span></p>
-            <textarea name="message" class="input" required maxlength="1000" placeholder="enter your message" cols="30" rows="10"></textarea>
-            <input type="submit" value="send message" name="send" class="btn">
-        </form>
+            <textarea
+              name="message"
+              id="message"
+              class="input"
+              required
+              maxlength="1000"
+              placeholder="Enter your message"
+              cols="30"
+              rows="10"
+            ></textarea>
+            <input type="submit" value="Send Message" name="send" class="btn" />
+          </form>
+          
+          <!-- Custom Alert Modal -->
+          <div id="custom-alert" class="custom-alert">
+            <div class="custom-alert-box">
+              <span class="close-btn" onclick="closeCustomAlert()">×</span>
+              <p id="custom-alert-message">Your message has been sent successfully!</p>
+              <button class="custom-alert-ok" onclick="closeCustomAlert()">OK</button>
+            </div>
+          </div>
+
 
     </section>
 
