@@ -1271,8 +1271,8 @@ header .flex {
   .section-title {
     font-size: 4rem;
     padding: 1rem 2rem;
-    width: 80%;
-    margin-left: 10rem;
+    width: 100%;
+    margin-left: 1rem;
   }
 
   .section-title2 {
@@ -1393,13 +1393,14 @@ header .flex {
     margin-left: 2rem;
   }
 
-  .home-container .home form {
-    width: 71%;
-    /* margin-left: 1rem; */
+  .jobs-container .box-container .box {
+    width: 125%;
+    margin-left: -4rem;
   }
 
-  .home-container .home form .input {
-    margin-left: -1rem;
+  .home-container .home form {
+    width: 92%;
+    margin-left: 1rem;
   }
 
   .home-container .home {
@@ -1409,9 +1410,34 @@ header .flex {
     justify-content: center;
   }
 
+  .about .box {
+    width: 91%;
+    margin-left: 2.5rem;
+  }
+
+  .reviews .box-container .box {
+    width: 125%;
+    margin-left: -4rem;
+  }
+
+  .company .box-container .box {
+    width: 118%;
+    margin-left: -4rem;
+  }
+
+  .contact .box-container .box {
+    width: 124%;
+    margin-left: -4rem;
+  }
+
   .contact form {
-    width: 72.5%;
-    margin-left: 6.5rem;
+    width: 91%;
+    margin-left: 2.5rem;
+  }
+
+  .view-company .details {
+    width: 91%;
+    margin-left: 3rem;
   }
 
   .custom-alert-box{
