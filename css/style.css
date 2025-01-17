@@ -1410,17 +1410,12 @@ header .flex {
   }
 
   .contact form {
-    width: 90%;
-    /* margin-left: 2.4rem; */
+    width: 72.5%;
+    margin-left: 6.5rem;
   }
 
   .custom-alert-box{
     width: 100%;
-  }
-
-  .contact form {
-    width: 71%;
-    margin-left: 7rem;
   }
 
   .account-form-container {
