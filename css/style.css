@@ -1394,8 +1394,8 @@ header .flex {
   }
 
   .jobs-container .box-container .box {
-    width: 125%;
-    margin-left: -4rem;
+    width: 120%;
+    margin-left: -3.5rem;
   }
 
   .home-container .home form {
@@ -1416,18 +1416,18 @@ header .flex {
   }
 
   .reviews .box-container .box {
-    width: 125%;
-    margin-left: -4rem;
+    width: 120%;
+    margin-left: -3rem;
   }
 
   .company .box-container .box {
     width: 118%;
-    margin-left: -4rem;
+    margin-left: -3rem;
   }
 
   .contact .box-container .box {
-    width: 124%;
-    margin-left: -4rem;
+    width: 120%;
+    margin-left: -3rem;
   }
 
   .contact form {
@@ -1478,7 +1478,13 @@ header .flex {
   .section-title {
     font-size: 3rem;
     margin-left: 5rem;
-    width: 80%;
+    width: 83%;
+  }
+
+  .section-title2 {
+    margin-left: 5rem;
+    width: 83%;
+    margin-top: 4.5rem;
   }
 
   .reviews .box-container {
