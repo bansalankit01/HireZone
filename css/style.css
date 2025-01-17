@@ -1394,8 +1394,8 @@ header .flex {
   }
 
   .home-container .home form {
-    width: 71%;
-    margin-left: 1rem;
+    width: 70%;
+    /* margin-left: 1rem; */
   }
 
   .home-container .home form .input {
