@@ -1395,7 +1395,7 @@ header .flex {
 
   .jobs-container .box-container .box {
     width: 115%;
-    margin-left: -3rem;
+    margin-left: -2rem;
   }
 
   .home-container .home form {
@@ -1417,17 +1417,17 @@ header .flex {
 
   .reviews .box-container .box {
     width: 115%;
-    margin-left: -3rem;
+    margin-left: -2rem;
   }
 
   .company .box-container .box {
     width: 115%;
-    margin-left: -3rem;
+    margin-left: -2rem;
   }
 
   .contact .box-container .box {
     width: 115%;
-    margin-left: -3rem;
+    margin-left: -2rem;
   }
 
   .contact form {
@@ -1437,7 +1437,7 @@ header .flex {
 
   .view-company .details {
     width: 91%;
-    margin-left: 3rem;
+    margin-left: 2rem;
   }
 
   .custom-alert-box{
