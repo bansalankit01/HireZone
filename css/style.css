@@ -1399,7 +1399,7 @@ header .flex {
   }
 
   .home-container .home form {
-    width: 92%;
+    width: 93%;
     margin-left: 1rem;
   }
 
@@ -1411,7 +1411,7 @@ header .flex {
   }
 
   .about .box {
-    width: 91%;
+    width: 92%;
     margin-left: 2.5rem;
   }
 
@@ -1431,8 +1431,13 @@ header .flex {
   }
 
   .contact form {
+    width: 92%;
+    margin-left: 2.3rem;
+  }
+
+  .job-details .details {
     width: 91%;
-    margin-left: 2.5rem;
+    margin-left: 2rem;
   }
 
   .view-company .details {
@@ -1477,13 +1482,13 @@ header .flex {
 
   .section-title {
     font-size: 3rem;
-    margin-left: 5rem;
+    margin-left: 4.5rem;
     width: 83%;
   }
 
   .section-title2 {
-    margin-left: 5rem;
-    width: 83%;
+    margin-left: 4rem;
+    width: 85%;
   }
 
   .reviews .box-container {
