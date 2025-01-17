@@ -16,49 +16,34 @@ menuBtn.addEventListener('click', () => {
     navbar.classList.toggle('active'); 
 });
 
-
-
-//  alert for apply job and save job 
+// alert button
 
 function showCustomAlert(message) {
-    // Set the message
     document.getElementById("custom-alert-message").textContent = message;
-
-    // Show the alert
     document.getElementById("custom-alert").style.display = "block";
   }
 
+  // Function to close the custom alert
   function closeCustomAlert() {
-    // Hide the alert
     document.getElementById("custom-alert").style.display = "none";
   }
 
-
-//   alert for contact form
-
-function showCustomAlert(event) {
-    // Prevent the default form submission
-    event.preventDefault();
+  // Handle the Contact Form submission
+  function handleContactForm(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
 
     // Check if all fields are filled
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
+    const name = document.getElementById("contact-name").value.trim();
+    const email = document.getElementById("contact-email").value.trim();
+    const message = document.getElementById("contact-message").value.trim();
 
     if (name && email && message) {
-      // Show the alert
-      document.getElementById("custom-alert").style.display = "block";
+      showCustomAlert("Your message has been sent successfully!");
+      // Optionally reset the form
+      event.target.reset();
     } else {
       alert("Please fill out all required fields.");
     }
-  }
-
-  function closeCustomAlert() {
-    // Hide the alert
-    document.getElementById("custom-alert").style.display = "none";
-
-    // Optionally, you can reset the form after showing the alert
-    document.querySelector("form").reset();
   }
 
 

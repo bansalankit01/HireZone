@@ -363,7 +363,7 @@ header .flex {
   border: 2px solid rgba(42, 41, 41, 0.737);
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
-  margin-top: rem;
+  margin-top: 3rem;
 }
 
 .home-container .home form h3 {
