@@ -17,3 +17,21 @@ menuBtn.addEventListener('click', () => {
 });
 
 
+
+//  JavaScript for the Custom Alert 
+
+function showCustomAlert(message) {
+    // Set the message
+    document.getElementById("custom-alert-message").textContent = message;
+
+    // Show the alert
+    document.getElementById("custom-alert").style.display = "block";
+  }
+
+  function closeCustomAlert() {
+    // Hide the alert
+    document.getElementById("custom-alert").style.display = "none";
+  }
+
+
+
