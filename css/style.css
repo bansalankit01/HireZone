@@ -319,12 +319,12 @@ header .flex {
 
 .header .flex .logo .image {
   margin-right: 0.5rem;
-  width: 22%;
+  width: 21%;
   height: 22%;
 }
 
 .header .flex .navbar a {
-  padding: 1rem 1rem;
+  padding: 1rem;
   font-size: 1.8rem;
   font-weight: bolder;
   color: black;
