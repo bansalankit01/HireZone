@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>HireZone - Home</title>
+
+    <link rel="icon" type="image/png" href="/images/icon.png">
 
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -14,8 +16,8 @@
       <section class="flex">
         <div id="menu-btn" class="fas fa-bars-staggered"></div>
 
-        <a href="home.html" class="logo"
-          ><i class="fas fa-briefcase"></i> HireZone</a>
+        <a href="home.html" class="logo">
+          <img class="image" src="/images/logo.png" alt="">
 
         <nav class="navbar">
           <a href="home.html">Home</a>
@@ -36,7 +38,7 @@
     <div class="home-container">
       <section class="home">
         <form action="" method="post">
-          <h3>Find your next job</h3>
+          <h3>Find your job</h3>
           <div class="fielddiv">
             <div class="field1">
               <p>Job Title <span>*</span></p>
@@ -61,14 +63,75 @@
                 class="input"
               />
             </div>
-            <div>
-              <input
-                type="submit"
-                value="Find jobs"
-                name="searh"
-                class="btn2"
-              />
+          </div>
+          <div class="dropdown-container">
+            <div class="dropdown">
+              <input type="text" readonly placeholder="date posted" name="date" maxlength="20" class="output">
+              <div class="lists">
+                <p class="items">Today</p>
+                <p class="items">2 days ago</p>
+                <p class="items">3 days ago</p>
+                <p class="items">4 days ago</p>
+                <p class="items">5 days ago</p>
+                <p class="items">Posted Today</p>
+                <p class="items">Posted just now </p>
+              </div>
             </div>
+
+            <div class="dropdown">
+              <input type="text" readonly placeholder="Pay" name="date" maxlength="20" class="output">
+              <div class="lists">
+                <p class="items">1000 or less</p>
+                <p class="items">1000 or 5000</p>
+                <p class="items">5000 or 10,000</p>
+                <p class="items">10,000 or 20,000</p>
+                <p class="items">20,000 or 50,000</p>
+                <p class="items">50,000 or 1,00,000</p>
+                <p class="items">1,00,000 or 5,00,000</p>
+                <p class="items">5,00,000 or 10,00,000</p>
+                <p class="items">10,00,000 or 50,00,000</p>
+              </div>
+            </div>
+
+            <div class="dropdown">
+              <input type="text" readonly placeholder="Job type" name="date" maxlength="20" class="output">
+              <div class="lists">
+                <p class="items">full-time</p>
+                <p class="items">part-time</p>
+                <p class="items">Internship</p>
+                <p class="items">Contract</p>
+                <p class="items">Temporary</p>
+                <p class="items">Fresher</p>
+              </div>
+            </div>
+
+            <div class="dropdown">
+              <input type="text" readonly placeholder="Education" name="date" maxlength="20" class="output">
+              <div class="lists">
+                <p class="items">10th Pass</p>
+                <p class="items">12th Pass</p>
+                <p class="items">Diploma</p>
+                <p class="items">Bachelor's degree</p>
+                <p class="items">Master's degree</p>
+              </div>
+            </div>
+
+            <div class="dropdown">
+              <input type="text" readonly placeholder="Work shift" name="date" maxlength="20" class="output">
+              <div class="lists">
+                <p class="items">Day shift</p>
+                <p class="items">Fixed shift</p>
+                <p class="items">flexible shift</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <input
+              type="submit"
+              value="Find jobs"
+              name="searh"
+              class="btn2"
+            />
           </div>
         </form>
       </section>
@@ -185,11 +248,11 @@
 
         <div class="box">
           <h3>Follow Us</h3>
-          <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+          <a href="#"><i class="fab fa-facebook-f" style="color: blue;"></i> Facebook</a>
           <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
-          <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+          <a href="#"><i class="fab fa-instagram" style="color: rgb(251, 3, 143);"></i> Instagram</a>
           <a href="#"><i class="fab fa-linkedin"></i> Linkedin</a>
-          <a href="#"><i class="fab fa-youtube"></i> Youtube</a>
+          <a href="#"><i class="fab fa-youtube" style="color: red;"></i> Youtube</a>
         </div>
       </section>
 
@@ -203,5 +266,18 @@
 
     <script src="js/script.js"></script>
     <script src="js/job-card.js"></script>
+
+    <script>
+
+      let dropdown_items = document.querySelectorAll('.dropdown-container .dropdown .lists .items');
+      dropdown_items.forEach(items => {
+        items.onclick = () => {
+          items_parent = items.parentElement.parentElement;
+          let output = items_parent.querySelector('.output');
+          output.value = items.innerText
+        }
+      })
+
+    </script>
   </body>
 </html>

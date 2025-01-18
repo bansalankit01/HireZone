@@ -57,7 +57,7 @@ body {
 section {
   padding: 2rem;
   margin: 0 auto;
-  max-width: 1200px;
+  /* max-width: 1200px; */
 }
 
 .heading {
@@ -118,6 +118,7 @@ section {
   text-transform: capitalize;
   padding: 1rem 0;
 }
+
 
 .section-title {
   /* border-top: 1rem solid var(--main-color);
@@ -237,7 +238,7 @@ section {
 
 .btn2 {
   display: inline-block;
-  margin-top: 4.5rem;
+  margin-top: 2rem;
   margin-left: 3rem;
   height: 49%;
   padding: 1rem 3rem;
@@ -316,16 +317,14 @@ header .flex {
   font-weight: bolder;
 }
 
-.header .flex .logo i {
+.header .flex .logo .image {
   margin-right: 0.5rem;
-  font-size: 3rem;
-  background: -webkit-linear-gradient(#a003f5, #07eacf);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  width: 22%;
+  height: 22%;
 }
 
 .header .flex .navbar a {
-  padding: 1rem 1.5rem;
+  padding: 1rem 1rem;
   font-size: 1.8rem;
   font-weight: bolder;
   color: black;
@@ -348,7 +347,7 @@ header .flex {
 }
 
 .home-container .home {
-  min-height: 60vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -356,14 +355,14 @@ header .flex {
 
 .home-container .home form {
   background-color: #fff;
-  width: 108rem;
+  width: 144rem;
   border-radius: 0.5rem;
   padding: 2rem;
   text-align: center;
   border: 2px solid rgba(42, 41, 41, 0.737);
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
-  margin-top: 3rem;
+  margin-top: 8rem;
 }
 
 .home-container .home form h3 {
@@ -403,14 +402,77 @@ header .flex {
 }
 
 .field1 {
-  width: 40%;
+  width: 50%;
   margin-right: 10rem;
 }
 
 .field2 {
-  width: 40%;
+  width: 50%;
   margin-left: -9rem;
 }
+
+.dropdown-container {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.dropdown-container .dropdown {
+  flex: 1 1 2rem;
+  position: relative; 
+}
+
+.dropdown-container .dropdown .output {
+  width: 100%;
+  background: var(--light-bg);
+  border-radius: .5rem;
+  padding: 1.4rem;
+  font-size: 1.8rem;
+  color: var(--black);
+  text-align: center;
+  user-select: none;
+  cursor: pointer;
+}
+
+.dropdown-container .dropdown .output:placeholder-shown {
+  text-transform: capitalize;
+}
+
+.dropdown-container .dropdown .lists {
+  position: absolute;
+  top: 100%; left: 0; right: 0;
+  background-color: var(--white);
+  padding: 1rem;
+  border-bottom-right-radius: .5rem;
+  border-bottom-left-radius: .5rem;
+  /* border: var(--border); */
+  box-shadow: var(--box-shadow);
+  z-index: 10;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+.dropdown-container .dropdown .lists .items {
+  padding: 1.2rem 1.4rem;
+  border-radius: .5rem;
+  font: 1.8rem;
+  color: var(--black);
+  cursor: pointer;
+}
+
+.dropdown-container .dropdown .lists .items:hover {
+  background-color: var(--light-bg);
+}
+
+.dropdown-container .dropdown .lists:hover,
+.dropdown-container .dropdown:hover .lists,
+.dropdown-container .dropdown .output:focus + .lists,
+.dropdown-container .dropdown .output:focus-within + .lists {
+  transform: scaleY(1);
+  transition: .2s linear;
+} 
+
 
 
 .jobs-container .box-container {
@@ -802,12 +864,14 @@ header .flex {
 
 .job-details .details {
   /* background: linear-gradient(to bottom, #ccffff 0%, #ccccff 100%); */
+  width: 95%;
   background: rgb(223, 240, 255);
   border-radius: 0.5rem;
   border: var(--border);
   padding: 2rem;
   box-shadow: var(--box-shadow);
   overflow-x: hidden;
+  margin-left: 4rem;
 }
 
 .job-details .details h3 {
@@ -914,10 +978,10 @@ header .flex {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgb(237, 251, 249);
+  background: #fff;
   padding: 20px 30px;
   border-radius: 8px;
-  box-shadow: 0px 4px 10px rgb(1, 186, 248);
+  box-shadow: 0px 4px 10px rgb(63, 64, 64);
   text-align: center;
   max-width: 300px;
 }
@@ -951,15 +1015,17 @@ header .flex {
 }
 
 .view-company .details {
+  width: 95%;
   background-color: rgb(223, 240, 255);
   box-shadow: var(--box-shadow);
   border: var(--border);
   border-radius: 0.5rem;
   padding: 2rem;
+  margin-left: 4rem;
 }
 
 .view-company .details .info {
-  max-width: 120rem;
+  max-width: 155rem;
   margin: 0 auto;
   border-radius: 0.5rem;
   background: url("https://burst.shopifycdn.com/photos/indoor-brick-wall-texture.jpg?width=1000&format=pjpg&exif=0&iptc=0");
@@ -1114,11 +1180,11 @@ header .flex {
 }
 
 .account-form-container .account-form {
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 10rem;
+  padding-top: 5rem;
   margin-bottom: 3rem;
 }
 
@@ -1232,6 +1298,12 @@ header .flex {
 @media (max-width: 768px) {
   #menu-btn {
     display: inline-block;
+  }
+
+  .header .flex .logo .image {
+    width: 55%;
+    height: 55%;
+    margin-left: 18rem;
   }
 
   .header .flex .navbar {
@@ -1388,9 +1460,8 @@ header .flex {
 
   .field1,
   .field2 {
-    width: 90%;
+    width: 100%;
     margin: 0;
-    margin-left: 2rem;
   }
 
   .jobs-container .box-container .box {
@@ -1401,10 +1472,15 @@ header .flex {
   .home-container .home form {
     width: 93%;
     margin-left: 1rem;
+    margin-top: 3rem;
+  }
+
+  .dropdown-container .dropdown {
+    flex: 1 1 18rem; 
   }
 
   .home-container .home {
-    /* min-height: 50vh; */
+    min-height: 85vh;
     display: flex;
     align-items: center;
     justify-content: center;
