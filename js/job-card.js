@@ -158,9 +158,13 @@ const carddata = [
       },
 ];
 
+const jobsPerPage = 4; // Number of jobs to display per page
+let currentPage = 1; // Start with the first page
+
 
 function createJobCards(dataArray) {
     const container = document.getElementById('box-container');
+    container.innerHTML = ''; // Clear previous results
     
     
     dataArray.forEach(data => {
@@ -191,8 +195,38 @@ function createJobCards(dataArray) {
     });
 }
 
+function renderPage(page) {
+    const startIndex = (page - 1) * jobsPerPage;
+    const endIndex = startIndex + jobsPerPage;
+    const jobsToShow = carddata.slice(startIndex, endIndex);
 
-createJobCards(carddata);
+    createJobCards(jobsToShow);
+    renderPagination();
+}
+
+// Function to render pagination controls
+function renderPagination() {
+    const paginationContainer = document.getElementById('pagination');
+    paginationContainer.innerHTML = ''; // Clear previous pagination controls
+
+    const totalPages = Math.ceil(carddata.length / jobsPerPage);
+
+    for (let i = 1; i <= totalPages; i++) {
+        const button = document.createElement('button');
+        button.textContent = i;
+        button.className = i === currentPage ? 'active' : '';
+        button.addEventListener('click', () => {
+            currentPage = i;
+            renderPage(currentPage);
+        });
+        paginationContainer.appendChild(button);
+    }
+}
+
+// Initialize the job cards and pagination on page load
+renderPage(currentPage);
+
+
 
 // Search and Filter Functionality
 
@@ -223,3 +257,7 @@ document.querySelector('input[name="searh"]').addEventListener('click', function
     event.preventDefault(); // Prevent form submission
     renderFilteredJobs();
 });
+
+
+
+
