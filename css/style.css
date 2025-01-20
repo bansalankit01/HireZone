@@ -130,7 +130,7 @@ section {
   text-transform: capitalize;
   position: absolute;
   width: 50%;
-  margin-top: 0.3rem;
+  margin-top: 3rem;
   margin-left: 38rem;
   border: 5px solid rgb(221, 196, 168);
 }
@@ -615,6 +615,7 @@ header .flex {
   border: var(--border);
   padding: 2rem;
   box-shadow: var(--box-shadow);
+  margin-top: 5rem;
 }
 
 .about .box h3 {
@@ -639,7 +640,7 @@ header .flex {
   gap: 1.5rem;
   align-items: flex-start;
   justify-content: center;
-  margin-top: 12rem;
+  margin-top: 15rem;
 }
 
 .reviews .box-container .box {
@@ -735,7 +736,7 @@ header .flex {
 .company .box-container .box:hover {
   cursor: pointer;
   transform: rotate(3deg) scale(1.1);
-  background-color: #ffe0b3;
+  /* background-color: #ffe0b3; */
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -1270,7 +1271,7 @@ header .flex {
   gap: 20rem;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 5rem;
+  margin-top: 1rem;
 }
 
 .footer .grid .box h3 {
@@ -1301,7 +1302,7 @@ header .flex {
   text-align: center;
   padding: 3rem 2rem;
   border-top: var(--border);
-  background-color: #7fb9e9;
+  /* background-color: #7fb9e9; */
   font-size: 2rem;
   color: var(--black);
   line-height: 1.5;
@@ -1310,6 +1311,11 @@ header .flex {
 .footer .credit span {
   color: var(--main-color);
   text-transform: capitalize;
+}
+
+.hrline {
+  border-top: 1px solid #8c8b8b;
+  margin-top: 2rem;
 }
 
 /* media queries */
@@ -1325,9 +1331,20 @@ header .flex {
   .section-title2 {
     font-size: 5rem;
   }
+
+  .hrline {
+    border-top: 1px solid #8c8b8b;
+    margin-top: 2rem;
+  }
 }
 
 @media (max-width: 768px) {
+
+  .hrline {
+    border-top: 1px solid #8c8b8b;
+    margin-top: 2rem;
+  }
+
   #menu-btn {
     display: inline-block;
   }
@@ -1510,7 +1527,7 @@ header .flex {
   }
 
   .dropdown-container .dropdown {
-    flex: 1 1 18rem;
+    flex: 1 1 12rem;
   }
 
   .home-container .home {
@@ -1607,5 +1624,10 @@ header .flex {
 
   .company .box-container {
     margin-top: 12rem;
+  }
+
+  .hrline {
+    border-top: 1px solid #8c8b8b;
+    margin-top: 2rem;
   }
 }

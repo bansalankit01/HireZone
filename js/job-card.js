@@ -7,7 +7,7 @@ const carddata = [
         location: "Bengaluru",
         salary: "2,25,000 - 5,00,000",
         jobType: "full-time",
-        jobType: "Day shift",
+        shift: "Day shift",
       },
     {
         companyName: "VIATRIS",
@@ -38,7 +38,6 @@ const carddata = [
         salary: "Not disclosed",
         jobType: "full-time",
         shift: "Day shift",
-        detailsLink: "view_job.html",
       },
     {
         companyName: 'Accenture',
@@ -69,7 +68,6 @@ const carddata = [
         salary: "2,00,000 - 7,00,000",
         jobType: "Full-time",
         shift: "day shifts",
-        detailsLink: "view_job.html",
       },
     {
         companyName: 'Genex Edge Solutions',
@@ -100,7 +98,6 @@ const carddata = [
         salary: "8,00,000 - 10,00,000",
         jobType: "full-time",
         shift: "Day shift",
-        detailsLink: "view_job.html",
       },
     {
         companyName: 'Techmindscape Private Limited',
@@ -121,7 +118,6 @@ const carddata = [
         salary: "Not Disclosed",
         jobType: "full-time",
         shift: "flexible shift",
-        detailsLink: "view_job.html",
       },
       {
         companyName: "Evolutionco",
@@ -132,7 +128,6 @@ const carddata = [
         salary: "3,00,000 - 6,00,000",
         jobType: "full-time",
         shift: "Day shift",
-        detailsLink: "view_job.html",
       },
       {
         companyName: "Odisha Doot Consultants",
@@ -143,7 +138,6 @@ const carddata = [
         salary: "not disclosed",
         jobType: "full-time",
         shift: "flexible shift",
-        detailsLink: "view_job.html",
       },
       {
         companyName: "Certbar Security",
@@ -153,8 +147,6 @@ const carddata = [
         location: "surat",
         salary: "not disclosed",
         jobType: "full-time",
-        shift: "Day shift",
-        detailsLink: "view_job.html",
       },
 ];
 
@@ -162,11 +154,80 @@ const jobsPerPage = 4; // Number of jobs to display per page
 let currentPage = 1; // Start with the first page
 
 
+// function createJobCards(dataArray) {
+//     const container = document.getElementById('box-container');
+//     container.innerHTML = ''; // Clear previous results
+    
+    
+//     dataArray.forEach(data => {
+//         const cardHTML = `
+//             <div class="box">
+//                 <div class="company">
+//                     <img src="${data.imagesrc}" alt="${data.companyName}">
+//                     <div>
+//                         <h3>${data.companyName}</h3>
+//                         <p>${data.posted}</p>
+//                     </div>
+//                 </div>
+//                 <h3 class="job-title">${data.jobTitle}</h3>
+//                 <p class="location"><i class="fas fa-map-marker-alt"></i> <span>${data.location}</span></p>
+//                 <div class="tags">
+//                     <p><i class="fas fa-indian-rupee-sign"></i> <span>${data.salary}</span></p>
+//                     <p><i class="fas fa-briefcase"></i> <span>${data.jobType}</span></p>
+//                     <p><i class="fas fa-clock"></i> <span>${data.shift}</span></p>
+//                 </div>
+//                 <div class="flex-btn">
+//                     <a href="view_job.html" class="btn">view details</a>
+//                     <button type="submit" class="far fa-heart" name="save"></button>
+//                 </div>
+//             </div>
+//         `;
+      
+//         container.innerHTML += cardHTML;
+//     });
+// }
+
+
+// // Search and Filter Functionality
+
+// function filterJobs(dataArray, title, location) {
+//     return dataArray.filter(job => {
+//         const matchesTitle = title === '' || 
+//             job.jobTitle.toLowerCase().includes(title.toLowerCase()) || 
+//             job.companyName.toLowerCase().includes(title.toLowerCase());
+//         const matchesLocation = location === '' || 
+//             job.location.toLowerCase().includes(location.toLowerCase());
+//         return matchesTitle && matchesLocation;
+//     });
+// }
+
+// // Render filtered job cards
+// function renderFilteredJobs() {
+//     const titleInput = document.querySelector('input[name="title"]').value;
+//     const locationInput = document.querySelector('input[name="location"]').value;
+//     const filteredJobs = filterJobs(carddata, titleInput, locationInput);
+//     const container = document.getElementById('box-container');
+//     container.innerHTML = ''; // Clear previous results
+//     createJobCards(filteredJobs); // Render filtered results
+// }
+
+// // Attach event listener to the search button
+// document.querySelector('input[name="searh"]').addEventListener('click', function(event) {
+//     event.preventDefault(); // Prevent form submission
+//     renderFilteredJobs();
+// });
+
+
+// Function to create job cards
 function createJobCards(dataArray) {
     const container = document.getElementById('box-container');
     container.innerHTML = ''; // Clear previous results
-    
-    
+
+    if (dataArray.length === 0) {
+        container.innerHTML = '<p>No jobs found matching your criteria.</p>';
+        return;
+    }
+
     dataArray.forEach(data => {
         const cardHTML = `
             <div class="box">
@@ -190,10 +251,80 @@ function createJobCards(dataArray) {
                 </div>
             </div>
         `;
-      
         container.innerHTML += cardHTML;
     });
 }
+
+// Function to filter jobs
+function filterJobs(dataArray, filters) {
+    return dataArray.filter(job => {
+        const matchesTitle = !filters.title || 
+            job.jobTitle.toLowerCase().includes(filters.title.toLowerCase()) || 
+            job.companyName.toLowerCase().includes(filters.title.toLowerCase());
+        
+        const matchesLocation = !filters.location || 
+            job.location.toLowerCase().includes(filters.location.toLowerCase());
+        
+        const matchesPosted = !filters.date || 
+            job.posted.toLowerCase().includes(filters.date.toLowerCase());
+        
+        const matchesPay = !filters.pay || 
+            parseInt(job.salary.replace(/,/g, '')) >= filters.pay[0] && 
+            parseInt(job.salary.replace(/,/g, '')) <= filters.pay[1];
+        
+        const matchesType = !filters.jobType || 
+            job.jobType.toLowerCase() === filters.jobType.toLowerCase();
+        
+        const matchesShift = !filters.shift || 
+            job.shift.toLowerCase() === filters.shift.toLowerCase();
+        
+        return matchesTitle && matchesLocation && matchesPosted && matchesPay && matchesType && matchesShift;
+    });
+}
+
+// Function to render filtered job cards
+function renderFilteredJobs() {
+    const filters = {
+        title: document.querySelector('input[name="title"]').value.trim(),
+        location: document.querySelector('input[name="location"]').value.trim(),
+        date: document.querySelector('.dropdown input[placeholder="date posted"]').value.trim(),
+        pay: parsePayRange(document.querySelector('.dropdown input[placeholder="Pay"]').value.trim()),
+        jobType: document.querySelector('.dropdown input[placeholder="Job type"]').value.trim(),
+        shift: document.querySelector('.dropdown input[placeholder="Work shift"]').value.trim(),
+    };
+
+    const filteredJobs = filterJobs(carddata, filters);
+    createJobCards(filteredJobs);
+}
+
+// Helper function to parse the salary range input
+function parsePayRange(payInput) {
+    if (!payInput) return null;
+
+    const payParts = payInput.split(' or ').map(part => part.replace(/,/g, '').trim());
+    return payParts.length === 2 ? [parseInt(payParts[0]), parseInt(payParts[1])] : null;
+}
+
+// Attach event listener to the search button
+document.querySelector('input[name="searh"]').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent form submission
+    renderFilteredJobs();
+});
+
+// Attach event listeners to dropdowns
+document.querySelectorAll('.dropdown .items').forEach(item => {
+    item.addEventListener('click', function() {
+        const input = this.closest('.dropdown').querySelector('input.output');
+        input.value = this.textContent.trim(); // Set dropdown value to input field
+        renderFilteredJobs();
+    });
+});
+
+// Initial render of all jobs
+createJobCards(carddata);
+
+
+// Function to render pagination controls
 
 function renderPage(page) {
     const startIndex = (page - 1) * jobsPerPage;
@@ -204,7 +335,6 @@ function renderPage(page) {
     renderPagination();
 }
 
-// Function to render pagination controls
 function renderPagination() {
     const paginationContainer = document.getElementById('pagination');
     paginationContainer.innerHTML = ''; // Clear previous pagination controls
@@ -227,36 +357,6 @@ function renderPagination() {
 renderPage(currentPage);
 
 
-
-// Search and Filter Functionality
-
-// Filter jobs based on user input
-function filterJobs(dataArray, title, location) {
-    return dataArray.filter(job => {
-        const matchesTitle = title === '' || 
-            job.jobTitle.toLowerCase().includes(title.toLowerCase()) || 
-            job.companyName.toLowerCase().includes(title.toLowerCase());
-        const matchesLocation = location === '' || 
-            job.location.toLowerCase().includes(location.toLowerCase());
-        return matchesTitle && matchesLocation;
-    });
-}
-
-// Render filtered job cards
-function renderFilteredJobs() {
-    const titleInput = document.querySelector('input[name="title"]').value;
-    const locationInput = document.querySelector('input[name="location"]').value;
-    const filteredJobs = filterJobs(carddata, titleInput, locationInput);
-    const container = document.getElementById('box-container');
-    container.innerHTML = ''; // Clear previous results
-    createJobCards(filteredJobs); // Render filtered results
-}
-
-// Attach event listener to the search button
-document.querySelector('input[name="searh"]').addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent form submission
-    renderFilteredJobs();
-});
 
 
 
