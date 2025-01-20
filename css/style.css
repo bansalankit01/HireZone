@@ -1531,7 +1531,7 @@ header .flex {
   }
 
   .home-container .home {
-    min-height: 85vh;
+    min-height: 75vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1545,6 +1545,7 @@ header .flex {
   .reviews .box-container .box {
     width: 115%;
     margin-left: -2.5rem;
+    margin-top: 4rem;
   }
 
   .company .box-container .box {
