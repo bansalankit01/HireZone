@@ -68,13 +68,12 @@
             <div class="dropdown">
               <input type="text" readonly placeholder="date posted" name="date" maxlength="20" class="output">
               <div class="lists">
-                <p class="items">Today</p>
                 <p class="items">2 days ago</p>
                 <p class="items">3 days ago</p>
                 <p class="items">4 days ago</p>
                 <p class="items">5 days ago</p>
                 <p class="items">Posted Today</p>
-                <p class="items">Posted just now </p>
+                <p class="items">Posted Just Now </p>
               </div>
             </div>
 
@@ -96,8 +95,8 @@
             <div class="dropdown">
               <input type="text" readonly placeholder="Job type" name="date" maxlength="20" class="output">
               <div class="lists">
-                <p class="items">full-time</p>
-                <p class="items">part-time</p>
+                <p class="items">Full-Time</p>
+                <p class="items">Part-Time</p>
                 <p class="items">Internship</p>
                 <p class="items">Contract</p>
                 <p class="items">Temporary</p>
@@ -109,8 +108,8 @@
               <input type="text" readonly placeholder="Work shift" name="date" maxlength="20" class="output">
               <div class="lists">
                 <p class="items">Day shift</p>
-                <p class="items">Fixed shift</p>
-                <p class="items">flexible shift</p>
+                <p class="items">Fixed Shift</p>
+                <p class="items">Flexible Shift</p>
               </div>
             </div>
           </div>
@@ -118,7 +117,7 @@
             <input
               type="submit"
               value="Find jobs"
-              name="searh"
+              name="search"
               class="btn2"
             />
           </div>
@@ -206,6 +205,7 @@
       
       <h1 class="heading">All Jobs</h1>
       <div id="box-container" class="box-container"></div>
+      <p id="error-message" style="color: red; display: none;"></p>
       <div id="pagination" class="pagination"></div>
     </section>
 
@@ -263,14 +263,29 @@
 
     <script>
 
-      let dropdown_items = document.querySelectorAll('.dropdown-container .dropdown .lists .items');
-      dropdown_items.forEach(items => {
-        items.onclick = () => {
-          items_parent = items.parentElement.parentElement;
-          let output = items_parent.querySelector('.output');
-          output.value = items.innerText
-        }
-      })
+let dropdown_items = document.querySelectorAll('.dropdown-container .dropdown .lists .items');
+
+dropdown_items.forEach(item => {
+  item.onclick = () => {
+    let dropdown = item.closest('.dropdown'); // Get the closest dropdown element
+    let output = dropdown.querySelector('.output'); // Find the output element within the dropdown
+    output.value = item.innerText; // Set the output value to the selected item text
+
+    // Close the dropdown menu by toggling the visibility
+    let dropdownList = dropdown.querySelector('.lists');
+    dropdownList.classList.remove('open'); // Remove the 'open' class to hide the dropdown
+  };
+});
+
+// Example event to toggle dropdown visibility when clicking the dropdown header
+document.querySelectorAll('.dropdown .output').forEach(output => {
+  output.onclick = () => {
+    let dropdown = output.closest('.dropdown');
+    let dropdownList = dropdown.querySelector('.lists');
+    dropdownList.classList.toggle('open'); // Toggle the 'open' class for the dropdown menu
+  };
+});
+
 
     </script>
   </body>

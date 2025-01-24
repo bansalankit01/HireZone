@@ -6,7 +6,7 @@ const carddata = [
         jobTitle: "UI/UX Designers",
         location: "Bengaluru",
         salary: "2,25,000 - 5,00,000",
-        jobType: "full-time",
+        jobType: "Full-Time",
         shift: "Day shift",
       },
     {
@@ -16,7 +16,7 @@ const carddata = [
         jobTitle: "Graduate Engineer Trainee",
         location: "Bengaluru",
         salary: "5,00,000",
-        jobType: "full-time",
+        jobType: "Full-Time",
         shift: "Day shift",
     },
     {
@@ -26,7 +26,7 @@ const carddata = [
         jobTitle: 'Senior web developer',
         location: 'Mumbai, India',
         salary: '3,00,000 - 5,00,000',
-        jobType: 'full-time',
+        jobType: 'Full-Time',
         shift: 'Day Shift'
     },
     {
@@ -36,7 +36,7 @@ const carddata = [
         jobTitle: "Software Engineer Trainee",
         location: "noida",
         salary: "Not disclosed",
-        jobType: "full-time",
+        jobType: "Full-Time",
         shift: "Day shift",
       },
     {
@@ -46,17 +46,17 @@ const carddata = [
         jobTitle: 'Qualified developer',
         location: 'Mumbai, India',
         salary: '5,00,000 - 7,00,000',
-        jobType: 'Full-time',
-        shift: 'Flexible Shifts'
+        jobType: 'Full-Time',
+        shift: 'Flexible Shift'
     },
     {
         companyName: 'IESoft Technologies Private Limited',
         imagesrc: 'https://s3.ap-south-1.amazonaws.com/triedgenew/assets/uploads/position/1662467636_WhatsApp%20Image%202022-09-01%20at%2017.30.56.jpeg',
-        posted: 'posted today',
+        posted: 'Posted Today',
         jobTitle: 'Software developer',
         location: 'Work from home',
         salary: '4,00,000 - 6,00,000',
-        jobType: 'full-time',
+        jobType: 'Full-Time',
         shift: 'Day Shift'
     },
     {
@@ -66,8 +66,8 @@ const carddata = [
         jobTitle: "British Airways II Fresher's",
         location: "noida, gurugram, delhi NCR",
         salary: "2,00,000 - 7,00,000",
-        jobType: "Full-time",
-        shift: "day shifts",
+        jobType: "Full-Time",
+        shift: "Day shift",
       },
     {
         companyName: 'Genex Edge Solutions',
@@ -76,17 +76,17 @@ const carddata = [
         jobTitle: 'Shopify developer',
         location: 'Delhi, India',
         salary: '2,00,000',
-        jobType: 'part-time',
+        jobType: 'Part-Time',
         shift: 'Fixed Shift'
     },
     {
         companyName: 'KLJ Resources Limited',
         imagesrc: 'https://media.licdn.com/dms/image/v2/D4D0BAQF27lrBtcuH8Q/company-logo_200_200/company-logo_200_200/0/1680669395027/klj_resources_ltd_logo?e=2147483647&v=beta&t=M2HkEofZPWknuW-Kzm6hrtLFqQVM9M1FIDtlAWALxdY',
-        posted: 'posted just now',
+        posted: 'Posted Just Now',
         jobTitle: 'Front End Developer',
         location: 'Delhi, India',
         salary: '4,00,000 - 6,00,000',
-        jobType: 'full-time',
+        jobType: 'Full-Time',
         shift: 'Day Shift'
     },
     {
@@ -96,7 +96,7 @@ const carddata = [
         jobTitle: "Data Entry Executive",
         location: "remote",
         salary: "8,00,000 - 10,00,000",
-        jobType: "full-time",
+        jobType: "Full-Time",
         shift: "Day shift",
       },
     {
@@ -106,8 +106,8 @@ const carddata = [
         jobTitle: 'Reactjs developer',
         location: 'Karnataka',
         salary: '2,40,000 - 3,00,000',
-        jobType: 'full-time',
-        shift: 'Day Shifts'
+        jobType: 'Full-Time',
+        shift: 'Day Shift'
     },
     {
         companyName: "Nexpro247",
@@ -116,8 +116,8 @@ const carddata = [
         jobTitle: "Web Developer",
         location: "Ahmedabad, Surat, Vadodara",
         salary: "Not Disclosed",
-        jobType: "full-time",
-        shift: "flexible shift",
+        jobType: "Full-Time",
+        shift: "Flexible Shift",
       },
       {
         companyName: "Evolutionco",
@@ -126,7 +126,7 @@ const carddata = [
         jobTitle: "Junior Ux Designer",
         location: "Mumbai (All Areas)",
         salary: "3,00,000 - 6,00,000",
-        jobType: "full-time",
+        jobType: "Full-Time",
         shift: "Day shift",
       },
       {
@@ -136,8 +136,8 @@ const carddata = [
         jobTitle: "Fullstack Developer",
         location: "Bhubaneswar( Saheed Nagar )",
         salary: "not disclosed",
-        jobType: "full-time",
-        shift: "flexible shift",
+        jobType: "Full-Time",
+        shift: "Flexible Shift",
       },
       {
         companyName: "Certbar Security",
@@ -146,8 +146,8 @@ const carddata = [
         jobTitle: "Jr . Creative Designer",
         location: "surat",
         salary: "not disclosed",
-        jobType: "full-time",
-        shift: "flexible shift"
+        jobType: "Full-Time",
+        shift: "Flexible Shift"
       },
 ];
 
@@ -155,11 +155,126 @@ const jobsPerPage = 4; // Number of jobs to display per page
 let currentPage = 1; // Start with the first page
 
 
+// function createJobCards(dataArray) {
+//     const container = document.getElementById('box-container');
+//     container.innerHTML = ''; // Clear previous results
+    
+    
+//     dataArray.forEach(data => {
+//         const cardHTML = `
+//             <div class="box">
+//                 <div class="company">
+//                     <img src="${data.imagesrc}" alt="${data.companyName}">
+//                     <div>
+//                         <h3>${data.companyName}</h3>
+//                         <p>${data.posted}</p>
+//                     </div>
+//                 </div>
+//                 <h3 class="job-title">${data.jobTitle}</h3>
+//                 <p class="location"><i class="fas fa-map-marker-alt"></i> <span>${data.location}</span></p>
+//                 <div class="tags">
+//                     <p><i class="fas fa-indian-rupee-sign"></i> <span>${data.salary}</span></p>
+//                     <p><i class="fas fa-briefcase"></i> <span>${data.jobType}</span></p>
+//                     <p><i class="fas fa-clock"></i> <span>${data.shift}</span></p>
+//                 </div>
+//                 <div class="flex-btn">
+//                     <a href="view_job.html" class="btn">view details</a>
+//                     <button type="submit" class="far fa-heart" name="save"></button>
+//                 </div>
+//             </div>
+//         `;
+      
+//         container.innerHTML += cardHTML;
+//     });
+// }
+
+
+// // Search and Filter Functionality
+
+// function filterJobs(dataArray, title, location, datePosted, salaryRange, jobType, workShift) {
+//     return dataArray.filter(job => {
+//         const matchesTitle = title === '' ||
+//             job.jobTitle.toLowerCase().includes(title.toLowerCase()) ||
+//             job.companyName.toLowerCase().includes(title.toLowerCase());
+//         const matchesLocation = location === '' ||
+//             job.location.toLowerCase().includes(location.toLowerCase());
+//         const matchesDate = datePosted === '' || job.posted.toLowerCase() === datePosted.toLowerCase();
+//         const matchesSalary = salaryRange === '' || job.salary.toLowerCase().includes(salaryRange.toLowerCase());
+//         const matchesJobType = jobType === '' || job.jobType.toLowerCase() === jobType.toLowerCase();
+//         const matchesShift = workShift === '' || job.shift.toLowerCase() === workShift.toLowerCase();
+//         return matchesTitle && matchesLocation && matchesDate && matchesSalary && matchesJobType && matchesShift;
+//     });
+// }
+
+// function renderFilteredJobs() {
+//     const titleInput = document.querySelector('input[name="title"]').value.trim();
+//     const locationInput = document.querySelector('input[name="location"]').value.trim();
+//     const dateInput = document.querySelector('input[placeholder="date posted"]').value.trim();
+//     const salaryInput = document.querySelector('input[placeholder="Pay"]').value.trim();
+//     const jobTypeInput = document.querySelector('input[placeholder="Job type"]').value.trim();
+//     const shiftInput = document.querySelector('input[placeholder="Work shift"]').value.trim();
+
+//     // Validate required fields
+//     if (!titleInput && !locationInput && !dateInput && !salaryInput && !jobTypeInput && !shiftInput) {
+//         alert('Please fill all fields to search jobs.');
+//         return;
+//     }
+
+//     const filteredJobs = filterJobs(carddata, titleInput, locationInput, dateInput, salaryInput, jobTypeInput, shiftInput);
+
+//     const container = document.getElementById('box-container');
+//     container.innerHTML = ''; // Clear previous results
+
+//     if (filteredJobs.length === 0) {
+//         container.innerHTML = '<p class="no-match">No match found</p>';
+//     } else {
+//         createJobCards(filteredJobs);
+//     }
+// }
+
+// // Attach event listener to the search button
+// document.querySelector('input[name="search"]').addEventListener('click', function(event) {
+//     event.preventDefault(); // Prevent form submission
+//     renderFilteredJobs();
+// });
+
+
+// // Function to render pagination controls
+
+// function renderPage(page) {
+//     const startIndex = (page - 1) * jobsPerPage;
+//     const endIndex = startIndex + jobsPerPage;
+//     const jobsToShow = carddata.slice(startIndex, endIndex);
+
+//     createJobCards(jobsToShow);
+//     renderPagination();
+// }
+
+// function renderPagination() {
+//     const paginationContainer = document.getElementById('pagination');
+//     paginationContainer.innerHTML = ''; // Clear previous pagination controls
+
+//     const totalPages = Math.ceil(carddata.length / jobsPerPage);
+
+//     for (let i = 1; i <= totalPages; i++) {
+//         const button = document.createElement('button');
+//         button.textContent = i;
+//         button.className = i === currentPage ? 'active' : '';
+//         button.addEventListener('click', () => {
+//             currentPage = i;
+//             renderPage(currentPage);
+//         });
+//         paginationContainer.appendChild(button);
+//     }
+// }
+
+// // Initialize the job cards and pagination on page load
+// renderPage(currentPage);
+
 function createJobCards(dataArray) {
     const container = document.getElementById('box-container');
     container.innerHTML = ''; // Clear previous results
-    
-    
+
     dataArray.forEach(data => {
         const cardHTML = `
             <div class="box">
@@ -183,58 +298,59 @@ function createJobCards(dataArray) {
                 </div>
             </div>
         `;
-      
         container.innerHTML += cardHTML;
     });
 }
 
-
-// Search and Filter Functionality
-
-function filterJobs(dataArray, title, location) {
+function filterJobs(dataArray, title, location, datePosted, salaryRange, jobType, workShift) {
     return dataArray.filter(job => {
-        const matchesTitle = title === '' || 
-            job.jobTitle.toLowerCase().includes(title.toLowerCase()) || 
-            job.companyName.toLowerCase().includes(title.toLowerCase());
-        const matchesLocation = location === '' || 
-            job.location.toLowerCase().includes(location.toLowerCase());
-        return matchesTitle && matchesLocation;
+        const matchesTitle = title === '' || job.jobTitle.toLowerCase().includes(title.toLowerCase()) || job.companyName.toLowerCase().includes(title.toLowerCase());
+        const matchesLocation = location === '' || job.location.toLowerCase().includes(location.toLowerCase());
+        const matchesDate = datePosted === '' || job.posted.toLowerCase().includes(datePosted.toLowerCase());
+        const matchesSalary = salaryRange === '' || job.salary.toLowerCase().includes(salaryRange.toLowerCase());
+        const matchesJobType = jobType === '' || job.jobType.toLowerCase() === jobType.toLowerCase();
+        const matchesShift = workShift === '' || job.shift.toLowerCase() === workShift.toLowerCase();
+        return matchesTitle && matchesLocation && matchesDate && matchesSalary && matchesJobType && matchesShift;
     });
 }
 
-// Render filtered job cards
 function renderFilteredJobs() {
-    const titleInput = document.querySelector('input[name="title"]').value;
-    const locationInput = document.querySelector('input[name="location"]').value;
-    const filteredJobs = filterJobs(carddata, titleInput, locationInput);
+    const titleInput = document.querySelector('input[name="title"]').value.trim();
+    const locationInput = document.querySelector('input[name="location"]').value.trim();
+    const dateInput = document.querySelector('input[placeholder="date posted"]').value.trim();
+    const salaryInput = document.querySelector('input[placeholder="Pay"]').value.trim();
+    const jobTypeInput = document.querySelector('input[placeholder="Job type"]').value.trim();
+    const shiftInput = document.querySelector('input[placeholder="Work shift"]').value.trim();
+
+    // Filter jobs
+    const filteredJobs = filterJobs(carddata, titleInput, locationInput, dateInput, salaryInput, jobTypeInput, shiftInput);
+
+    // Update pagination with filtered results
+    renderPagination(filteredJobs);
+
+    // Render filtered job cards
     const container = document.getElementById('box-container');
     container.innerHTML = ''; // Clear previous results
-    createJobCards(filteredJobs); // Render filtered results
+
+    if (filteredJobs.length === 0) {
+        container.innerHTML = '<p class="no-match">No match found</p>';
+    } else {
+        renderPage(1, filteredJobs); // Render the first page with filtered jobs
+    }
 }
-
-// Attach event listener to the search button
-document.querySelector('input[name="searh"]').addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent form submission
-    renderFilteredJobs();
-});
-
-
-// Function to render pagination controls
-
-function renderPage(page) {
+function renderPage(page, filteredJobs) {
     const startIndex = (page - 1) * jobsPerPage;
     const endIndex = startIndex + jobsPerPage;
-    const jobsToShow = carddata.slice(startIndex, endIndex);
+    const jobsToShow = filteredJobs.slice(startIndex, endIndex);
 
-    createJobCards(jobsToShow);
-    renderPagination();
+    createJobCards(jobsToShow); // Create the job cards
 }
 
-function renderPagination() {
+function renderPagination(filteredJobs) {
     const paginationContainer = document.getElementById('pagination');
     paginationContainer.innerHTML = ''; // Clear previous pagination controls
 
-    const totalPages = Math.ceil(carddata.length / jobsPerPage);
+    const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
 
     for (let i = 1; i <= totalPages; i++) {
         const button = document.createElement('button');
@@ -242,14 +358,24 @@ function renderPagination() {
         button.className = i === currentPage ? 'active' : '';
         button.addEventListener('click', () => {
             currentPage = i;
-            renderPage(currentPage);
+            renderPage(currentPage, filteredJobs); // Render page based on current filter
         });
         paginationContainer.appendChild(button);
     }
 }
 
-// Initialize the job cards and pagination on page load
-renderPage(currentPage);
+
+document.querySelector('input[name="title"]').addEventListener('input', renderFilteredJobs);
+
+document.querySelector('input[name="location"]').addEventListener('input', renderFilteredJobs);
+
+document.querySelector('input[placeholder="date posted"]').addEventListener('click', renderFilteredJobs);
+
+document.querySelector('input[placeholder="Pay"]').addEventListener('click', renderFilteredJobs);
+
+document.querySelector('input[placeholder="Job type"]').addEventListener('click', renderFilteredJobs);
+
+document.addEventListener('DOMContentLoaded', renderFilteredJobs);
 
 
 
