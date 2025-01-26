@@ -672,13 +672,13 @@ header .flex {
 }
 
 .about .box {
-  /* background: linear-gradient(to bottom, #ccffff 0%, #ccccff 100%); */
-  background: rgb(223, 240, 255);
+  background: rgb(223, 240, 255); /* Soft blue background */
   border-radius: 0.5rem;
   border: var(--border);
   padding: 2rem;
   box-shadow: var(--box-shadow);
   margin-top: 5rem;
+  max-width: 100%; /* Ensures the box doesn't overflow its container */
 }
 
 .about .box h3 {
@@ -686,6 +686,7 @@ header .flex {
   color: var(--black);
   margin-bottom: 1rem;
   text-transform: capitalize;
+  word-wrap: break-word; /* Breaks long words for proper wrapping */
 }
 
 .about .box p {
@@ -694,7 +695,8 @@ header .flex {
   color: var(--light-color);
   font-weight: bolder;
   font-style: italic;
-  font-size: 1.8rem;
+  font-size: 1.6rem; /* Adjusted for better scaling */
+  word-wrap: break-word; /* Prevents overflowing text */
 }
 
 .reviews .box-container {
@@ -1687,7 +1689,7 @@ header .flex {
   .home-container .home form {
     width: 93%;
     margin-left: 1rem;
-    margin-top: 3rem;
+    margin-top: 9rem;
   }
 
   .dropdown-container .dropdown {
@@ -1704,6 +1706,16 @@ header .flex {
   .about .box {
     width: 92%;
     margin-left: 2rem;
+    padding: 1.5rem; /* Reduced padding for smaller screens */
+  }
+
+  .about .box h3 {
+    font-size: 3rem; /* Adjust heading size */
+    margin-top: 2rem;
+  }
+
+  .about .box p {
+    font-size: 1.8rem; /* Adjust paragraph size */
   }
 
   .reviews .box-container .box {
