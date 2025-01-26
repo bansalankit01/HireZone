@@ -280,100 +280,126 @@ function filterJobs(
   });
 }
 
-function renderFilteredJobs() {
-  const titleInput = document.querySelector('input[name="title"]').value.trim();
-  const locationInput = document
-    .querySelector('input[name="location"]')
-    .value.trim();
-  const dateInput = document
-    .querySelector('input[placeholder="date posted"]')
-    .value.trim();
-  const salaryInput = document
-    .querySelector('input[placeholder="Pay"]')
-    .value.trim();
-  const jobTypeInput = document
-    .querySelector('input[placeholder="Job type"]')
-    .value.trim();
-  const shiftInput = document
-    .querySelector('input[placeholder="Work shift"]')
-    .value.trim();
-
-  // Validate required fields
-
-  console.log(dateInput)
-  console.log(salaryInput)
-  console.log(jobTypeInput)
-  console.log(shiftInput)
-    
-  if (
-    !titleInput ||
-    !locationInput ||
-    !dateInput  ||
-    !salaryInput  ||
-    !jobTypeInput ||
-    !shiftInput 
-  ) {
-    alert("Please fill all fields to search jobs.");
-    return;
+// Toggle pagination visibility
+function togglePagination(show) {
+    const paginationContainer = document.getElementById("pagination");
+    paginationContainer.style.display = show ? "block" : "none";
   }
-
-  const filteredJobs = filterJobs(
-    carddata,
-    titleInput,
-    locationInput,
-    dateInput,
-    salaryInput,
-    jobTypeInput,
-    shiftInput
-  );
-
-  const container = document.getElementById("box-container");
-  container.innerHTML = ""; // Clear previous results
-
-  if (filteredJobs.length === 0) {
-    container.innerHTML = '<p class="no-match">No match found</p>';
-  } else {
-    createJobCards(filteredJobs);
+  
+  // Function to render jobs on a specific page
+  function renderPage(page) {
+    const startIndex = (page - 1) * jobsPerPage;
+    const endIndex = startIndex + jobsPerPage;
+  
+    const jobsToShow = carddata.slice(startIndex, endIndex);
+  
+    const container = document.getElementById("box-container");
+    container.innerHTML = ""; // Clear previous jobs
+  
+    if (jobsToShow.length > 0) {
+      createJobCards(jobsToShow); // Create job cards for the current page
+    } else {
+      container.innerHTML = '<p class="no-match">No jobs available</p>';
+    }
+  
+    renderPagination(); // Render the pagination controls
   }
-}
-
-// Attach event listener to the search button
-document
-  .querySelector('input[name="search"]')
-  .addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent form submission
-    renderFilteredJobs();
-  });
-
-// Function to render pagination controls
-
-function renderPage(page) {
-  const startIndex = (page - 1) * jobsPerPage;
-  const endIndex = startIndex + jobsPerPage;
-  const jobsToShow = carddata.slice(startIndex, endIndex);
-
-  createJobCards(jobsToShow);
-  renderPagination();
-}
-
-function renderPagination() {
-  const paginationContainer = document.getElementById("pagination");
-  paginationContainer.innerHTML = ""; // Clear previous pagination controls
-
-  const totalPages = Math.ceil(carddata.length / jobsPerPage);
-
-  for (let i = 1; i <= totalPages; i++) {
-    const button = document.createElement("button");
-    button.textContent = i;
-    button.className = i === currentPage ? "active" : "";
-    button.addEventListener("click", () => {
-      currentPage = i;
-      renderPage(currentPage);
+  
+  // Function to render pagination controls
+  function renderPagination() {
+    const paginationContainer = document.getElementById("pagination");
+    paginationContainer.innerHTML = ""; // Clear previous pagination controls
+  
+    const totalPages = Math.ceil(carddata.length / jobsPerPage);
+  
+    if (totalPages <= 1) {
+      togglePagination(false); // Hide pagination if there's only one page
+      return;
+    }
+  
+    togglePagination(true); // Show pagination if there are multiple pages
+  
+    for (let i = 1; i <= totalPages; i++) {
+      const button = document.createElement("button");
+      button.textContent = i;
+      button.className = i === currentPage ? "active" : "";
+      button.addEventListener("click", () => {
+        currentPage = i;
+        renderPage(currentPage); // Re-render the current page
+      });
+      paginationContainer.appendChild(button);
+    }
+  }
+  
+  // Function to filter and render jobs based on search input
+  function renderFilteredJobs() {
+    const titleInput = document.querySelector('input[name="title"]').value.trim();
+    const locationInput = document
+      .querySelector('input[name="location"]')
+      .value.trim();
+    const dateInput = document
+      .querySelector('input[placeholder="date posted"]')
+      .value.trim();
+    const salaryInput = document
+      .querySelector('input[placeholder="Pay"]')
+      .value.trim();
+    const jobTypeInput = document
+      .querySelector('input[placeholder="Job type"]')
+      .value.trim();
+    const shiftInput = document
+      .querySelector('input[placeholder="Work shift"]')
+      .value.trim();
+  
+    // Ensure all fields are filled
+    if (
+      !titleInput ||
+      !locationInput ||
+      !dateInput ||
+      !salaryInput ||
+      !jobTypeInput ||
+      !shiftInput
+    ) {
+      alert("Please fill all fields to search jobs.");
+      return;
+    }
+  
+    // Perform the filtering
+    const filteredJobs = filterJobs(
+      carddata,
+      titleInput,
+      locationInput,
+      dateInput,
+      salaryInput,
+      jobTypeInput,
+      shiftInput
+    );
+  
+    const container = document.getElementById("box-container");
+    container.innerHTML = ""; // Clear previous results
+  
+    if (filteredJobs.length === 0) {
+      container.innerHTML = '<p class="no-match">No match found</p>';
+    } else {
+      createJobCards(filteredJobs); // Display filtered jobs
+    }
+  
+    // Hide pagination during search results
+    togglePagination(false);
+  }
+  
+  // Event listener for search button
+  document
+    .querySelector('input[name="search"]')
+    .addEventListener("click", function (event) {
+      event.preventDefault(); // Prevent form submission
+      renderFilteredJobs();
     });
-    paginationContainer.appendChild(button);
+  
+  // Initialize the job list and pagination
+  function init() {
+    renderPage(currentPage); // Render the first page
   }
-}
-
-// Initialize the job cards and pagination on page load
-renderPage(currentPage);
+  
+  init();
+  
 

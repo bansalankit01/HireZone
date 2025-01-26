@@ -370,8 +370,8 @@ header .flex {
 
 .header .flex .logo .image {
   margin-right: 0.5rem;
-  width: 60%;
-  height: 60%;
+  width: 45%;
+  height: 45%;
 }
 
 .header .flex .navbar {
@@ -1392,10 +1392,21 @@ header .flex {
 .footer .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, 35rem);
-  gap: 20rem;
+  /* gap: 2rem; */
   justify-content: center;
   align-items: flex-start;
   margin-top: 1rem;
+}
+
+.footer .grid .box {
+  margin-left: 15rem;
+}
+
+.footer_image{
+  width: 15%;
+  height: 15%;
+  margin-bottom: -14rem;
+  margin-left: 8rem;
 }
 
 .footer .grid .box h3 {
@@ -1504,7 +1515,7 @@ header .flex {
   .header .flex .navbar a {
     display: block;
     padding: 1rem 2rem;
-    margin-top: -1rem;
+    /* margin-top: 1rem; */
   }
 
   .header .flex .navbar a:hover {
@@ -1694,7 +1705,21 @@ header .flex {
 
   .dropdown-container .dropdown {
     flex: 1 1 12rem;
+    position: relative;
   }
+
+
+.dropdown-container .dropdown .lists {
+  max-height: 150px; /* Limit the height of the dropdown list */
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  /* border: 1px solid #ccc;  */
+  background-color: #fff; /* Ensure the dropdown list has a distinct background */
+  position: absolute; /* Position the dropdown items absolutely */
+  width: 100%; /* Match the width of the parent dropdown */
+  z-index: 10; /* Ensure it appears above other elements */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
+}
 
   .home-container .home {
     min-height: 75vh;
@@ -1712,6 +1737,10 @@ header .flex {
   .about .box h3 {
     font-size: 3rem; /* Adjust heading size */
     margin-top: 2rem;
+  }
+
+  .footer .grid .box {
+    margin-left: -1rem;
   }
 
   .about .box p {
@@ -1785,6 +1814,14 @@ header .flex {
     gap: 1.5rem;
     justify-content: center;
     align-items: flex-start;
+  }
+
+  .footer_image{
+    width: 48%;
+    height: 48%;
+    margin-left: 10rem;
+    margin-top: 2rem;
+    margin-bottom: -1rem;
   }
 }
 
