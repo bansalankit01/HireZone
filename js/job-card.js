@@ -282,124 +282,233 @@ function filterJobs(
 
 // Toggle pagination visibility
 function togglePagination(show) {
-    const paginationContainer = document.getElementById("pagination");
-    paginationContainer.style.display = show ? "block" : "none";
-  }
-  
-  // Function to render jobs on a specific page
-  function renderPage(page) {
-    const startIndex = (page - 1) * jobsPerPage;
-    const endIndex = startIndex + jobsPerPage;
-  
-    const jobsToShow = carddata.slice(startIndex, endIndex);
-  
-    const container = document.getElementById("box-container");
-    container.innerHTML = ""; // Clear previous jobs
-  
-    if (jobsToShow.length > 0) {
-      createJobCards(jobsToShow); // Create job cards for the current page
-    } else {
-      container.innerHTML = '<p class="no-match">No jobs available</p>';
-    }
-  
-    renderPagination(); // Render the pagination controls
-  }
-  
-  // Function to render pagination controls
-  function renderPagination() {
-    const paginationContainer = document.getElementById("pagination");
-    paginationContainer.innerHTML = ""; // Clear previous pagination controls
-  
-    const totalPages = Math.ceil(carddata.length / jobsPerPage);
-  
-    if (totalPages <= 1) {
-      togglePagination(false); // Hide pagination if there's only one page
-      return;
-    }
-  
-    togglePagination(true); // Show pagination if there are multiple pages
-  
-    for (let i = 1; i <= totalPages; i++) {
-      const button = document.createElement("button");
-      button.textContent = i;
-      button.className = i === currentPage ? "active" : "";
-      button.addEventListener("click", () => {
-        currentPage = i;
-        renderPage(currentPage); // Re-render the current page
-      });
-      paginationContainer.appendChild(button);
-    }
-  }
-  
-  // Function to filter and render jobs based on search input
-  function renderFilteredJobs() {
-    const titleInput = document.querySelector('input[name="title"]').value.trim();
-    const locationInput = document
-      .querySelector('input[name="location"]')
-      .value.trim();
-    const dateInput = document
-      .querySelector('input[placeholder="date posted"]')
-      .value.trim();
-    const salaryInput = document
-      .querySelector('input[placeholder="Pay"]')
-      .value.trim();
-    const jobTypeInput = document
-      .querySelector('input[placeholder="Job type"]')
-      .value.trim();
-    const shiftInput = document
-      .querySelector('input[placeholder="Work shift"]')
-      .value.trim();
-  
-    // Ensure all fields are filled
-    if (
-      !titleInput ||
-      !locationInput ||
-      !dateInput ||
-      !salaryInput ||
-      !jobTypeInput ||
-      !shiftInput
-    ) {
-      alert("Please fill all fields to search jobs.");
-      return;
-    }
-  
-    // Perform the filtering
-    const filteredJobs = filterJobs(
-      carddata,
-      titleInput,
-      locationInput,
-      dateInput,
-      salaryInput,
-      jobTypeInput,
-      shiftInput
-    );
-  
-    const container = document.getElementById("box-container");
-    container.innerHTML = ""; // Clear previous results
-  
-    if (filteredJobs.length === 0) {
-      container.innerHTML = '<p class="no-match">No match found</p>';
-    } else {
-      createJobCards(filteredJobs); // Display filtered jobs
-    }
-  
-    // Hide pagination during search results
-    togglePagination(false);
-  }
-  
-  // Event listener for search button
-  document
-    .querySelector('input[name="search"]')
-    .addEventListener("click", function (event) {
-      event.preventDefault(); // Prevent form submission
-      renderFilteredJobs();
-    });
-  
-  // Initialize the job list and pagination
-  function init() {
-    renderPage(currentPage); // Render the first page
-  }
-  
-  init();
-  
+  const paginationContainer = document.getElementById("pagination");
+  paginationContainer.style.display = show ? "block" : "none";
+}
 
+// Function to render jobs on a specific page
+function renderPage(page) {
+  const startIndex = (page - 1) * jobsPerPage;
+  const endIndex = startIndex + jobsPerPage;
+
+  const jobsToShow = carddata.slice(startIndex, endIndex);
+
+  const container = document.getElementById("box-container");
+  container.innerHTML = ""; // Clear previous jobs
+
+  if (jobsToShow.length > 0) {
+    createJobCards(jobsToShow); // Create job cards for the current page
+  } else {
+    container.innerHTML = '<p class="no-match">No jobs available</p>';
+  }
+
+  renderPagination(); // Render the pagination controls
+}
+
+// Function to render pagination controls
+function renderPagination() {
+  const paginationContainer = document.getElementById("pagination");
+  paginationContainer.innerHTML = ""; // Clear previous pagination controls
+
+  const totalPages = Math.ceil(carddata.length / jobsPerPage);
+
+  if (totalPages <= 1) {
+    togglePagination(false); // Hide pagination if there's only one page
+    return;
+  }
+
+  togglePagination(true); // Show pagination if there are multiple pages
+
+  for (let i = 1; i <= totalPages; i++) {
+    const button = document.createElement("button");
+    button.textContent = i;
+    button.className = i === currentPage ? "active" : "";
+    button.addEventListener("click", () => {
+      currentPage = i;
+      renderPage(currentPage); // Re-render the current page
+    });
+    paginationContainer.appendChild(button);
+  }
+}
+
+// Function to filter and render jobs based on search input
+function renderFilteredJobs() {
+  const titleInput = document.querySelector('input[name="title"]').value.trim();
+  const locationInput = document
+    .querySelector('input[name="location"]')
+    .value.trim();
+  const dateInput = document
+    .querySelector('input[placeholder="date posted"]')
+    .value.trim();
+  const salaryInput = document
+    .querySelector('input[placeholder="Pay"]')
+    .value.trim();
+  const jobTypeInput = document
+    .querySelector('input[placeholder="Job type"]')
+    .value.trim();
+  const shiftInput = document
+    .querySelector('input[placeholder="Work shift"]')
+    .value.trim();
+
+  // Ensure all fields are filled
+  if (
+    !titleInput &&
+    !locationInput &&
+    !dateInput &&
+    !salaryInput &&
+    !jobTypeInput &&
+    !shiftInput
+  ) {
+    alert("Please fill all fields to search jobs.");
+    return;
+  }
+
+  // Perform the filtering
+  const filteredJobs = filterJobs(
+    carddata,
+    titleInput,
+    locationInput,
+    dateInput,
+    salaryInput,
+    jobTypeInput,
+    shiftInput
+  );
+
+  const container = document.getElementById("box-container");
+  container.innerHTML = ""; // Clear previous results
+
+  if (filteredJobs.length === 0) {
+    container.innerHTML = '<p class="no-match">No match found</p>';
+  } else {
+    createJobCards(filteredJobs); // Display filtered jobs
+  }
+
+  // Hide pagination during search results
+  togglePagination(false);
+}
+
+// Event listener for search button
+document
+  .querySelector('input[name="search"]')
+  .addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent form submission
+    renderFilteredJobs();
+  });
+
+
+// Function to clear input fields
+function clearInput(fieldName) {
+  const inputField = document.querySelector(`input[name="${fieldName}"]`);
+  inputField.value = ""; // Clear the input value
+  toggleClearCross(fieldName); // Hide the cross after clearing
+}
+
+// Function to toggle visibility of the cross
+function toggleClearCross(fieldName) {
+  const inputField = document.querySelector(`input[name="${fieldName}"]`);
+  const cross = inputField.nextElementSibling; // Get the cross (span) next to input field
+
+  if (inputField.value) {
+    cross.style.display = "block"; // Show cross if there's value
+  } else {
+    cross.style.display = "none"; // Hide cross if there's no value
+  }
+}
+
+// Attach event listeners to input fields to show/hide the cross on user input
+document.querySelectorAll('input[type="text"]').forEach((input) => {
+  input.addEventListener("input", function () {
+    toggleClearCross(input.name); // Show/hide cross based on input value
+  });
+});
+
+
+
+// Function to clear filter
+function clearFilter(fieldName) {
+  const inputFilter = document.querySelector(`input[name="${fieldName}"]`);
+  inputField.value = ""; // Clear the input value
+  toggleClearCross(fieldName); // Hide the cross after clearing
+}
+
+// Function to toggle visibility of the cross
+function toggleClearCross(fieldName) {
+  const inputFilter = document.querySelector(`input[name="${fieldName}"]`);
+  const cross = inputFilter.nextElementSibling; // Get the cross (span) next to input field
+
+  if (inputFilter.value) {
+    cross.style.display = "block"; // Show cross if there's value
+  } else {
+    cross.style.display = "none"; // Hide cross if there's no value
+  }
+}
+
+// Attach event listeners to input fields to show/hide the cross on user input
+document.querySelectorAll('input[type="text"]').forEach((input) => {
+  input.addEventListener("input", function () {
+    toggleClearCross(input.name); // Show/hide cross based on input value
+  });
+});
+
+
+
+// Function to handle clearing of selected filter
+function clearFilter(filterName) {
+  const inputField = document.querySelector(`input[name="${filterName}"]`);
+  const lists = inputField.parentElement.querySelector('.lists');
+  inputField.value = ''; // Clear the input value
+  toggleClearFilter(filterName); // Hide the cross after clearing
+  lists.style.display = 'none'; // Close the dropdown list when cleared
+}
+
+// Function to toggle visibility of the cross for filters
+function toggleClearFilter(filterName) {
+  const inputField = document.querySelector(`input[name="${filterName}"]`);
+  const cross = inputField.nextElementSibling; // Get the cross (span) next to filter
+  
+  if (inputField.value) {
+    cross.style.display = "block"; // Show cross if there's a selection
+  } else {
+    cross.style.display = "none"; // Hide cross if there's no selection
+  }
+}
+
+// Event listeners for dropdown selections
+document.querySelectorAll('.dropdown').forEach(dropdown => {
+  dropdown.addEventListener('click', function(e) {
+    const inputField = dropdown.querySelector('.output');
+    
+    // If the clicked element is one of the list items
+    if (e.target.classList.contains('items')) {
+      inputField.value = e.target.textContent; // Set the selected item to the input field
+      toggleClearFilter(inputField.name); // Show the cross after selection
+      dropdown.querySelector('.lists').style.display = 'none'; // Close the list after selection
+    }
+    
+    // If the clicked element is the input field itself (open the dropdown)
+    if (e.target === inputField) {
+      const lists = dropdown.querySelector('.lists');
+      lists.style.display = lists.style.display === 'block' ? 'none' : 'block'; // Toggle dropdown visibility
+    }
+  });
+});
+
+// Close the dropdown when clicking outside
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.dropdown')) {
+    document.querySelectorAll('.lists').forEach(list => {
+      list.style.display = 'none';
+    });
+  }
+});
+
+
+
+
+
+// Initialize the job list and pagination
+function init() {
+  renderPage(currentPage); // Render the first page
+}
+
+init();

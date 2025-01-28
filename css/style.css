@@ -175,16 +175,12 @@ section {
   top: 0;
 }
 
-
-
 .no-match {
   font-size: 18px;
   color: #ff0000;
   text-align: center;
   margin-top: 1rem;
 }
-
-
 
 /* .about_img {
   width: 600px;
@@ -453,9 +449,9 @@ header .flex {
   border: 1px solid black;
 }
 
-.home-container .home form .input:hover {
+/* .home-container .home form .input:hover {
   border-bottom: 3px solid var(--main-color);
-}
+} */
 
 .fielddiv {
   display: flex;
@@ -469,6 +465,98 @@ header .flex {
 .field2 {
   width: 50%;
   margin-left: -9rem;
+}
+
+.input-container {
+  position: relative;
+}
+
+.clear-input {
+  position: absolute;
+  margin-left: 58rem;
+  margin-top: -3.5rem;
+  transform: translateY(-50%);
+  font-size: 35px;
+  color: #727272;
+  cursor: pointer;
+  display: none; /* Hide by default */
+}
+
+.input-container input:valid + .clear-input, /* Show cross when there's data */
+.input-container input:focus + .clear-input {
+  display: block;
+}
+
+/* Dropdown Container */
+.dropdown-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Each Dropdown Box */
+.dropdown {
+  position: relative;
+  width: 200px;
+  border: 1px solid #b4b1b1;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+
+/* Clear Filter (×) button */
+.clear-filter {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 25px;
+  color: #727272;
+  cursor: pointer;
+  display: none;
+}
+
+/* Display the cross when the input field has a value */
+.output:valid + .clear-filter,
+.output:focus + .clear-filter {
+  display: block;
+}
+
+/* List of Filter Options */
+.lists {
+  display: none;
+  position: absolute;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 1;
+  top: 100%;
+  border-radius: 0 0 5px 5px;
+}
+
+/* Show the list when input is focused */
+.dropdown:hover .lists,
+.output:focus + .clear-filter + .lists {
+  display: block;
+}
+
+/* Style each item inside the dropdown list */
+/* .items {
+  padding: 8px;
+  cursor: pointer;
+  font-size: 14px;
+} */
+
+.items:hover {
+  background-color: #f1f1f1;
+}
+
+/* Focused Item Highlight */
+.items:focus {
+  background-color: #dcdcdc;
 }
 
 .dropdown-container {
@@ -485,7 +573,7 @@ header .flex {
 
 .dropdown-container .dropdown .output {
   width: 100%;
-  background: var(--light-bg);
+  background: #dedede;
   border-radius: 0.5rem;
   padding: 1.4rem;
   font-size: 1.8rem;
@@ -522,7 +610,6 @@ header .flex {
 .lists.open {
   display: block;
 }
-
 
 .dropdown-container .dropdown .lists .items {
   padding: 1.2rem 1.4rem;
@@ -719,11 +806,11 @@ header .flex {
   transition: transform 0.4s cubic-bezier(0.42, 0, 0.58, 1),
     background-color 0.3s ease-in, box-shadow 0.3s ease-in-out; */
 
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    perspective: 800px;
-    transform-style: preserve-3d;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  perspective: 800px;
+  transform-style: preserve-3d;
 }
 
 /* .reviews .box-container .box:hover {
@@ -732,7 +819,8 @@ header .flex {
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 } */
 
-.abstract, .detail {
+.abstract,
+.detail {
   width: 100%;
   padding: 15px 30px;
   position: relative;
@@ -758,7 +846,7 @@ header .flex {
   transition: 0.3s transform ease;
 }
 .detail::before {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 0;
@@ -768,7 +856,7 @@ header .flex {
   background: rgb(16, 15, 15);
 }
 
-.box:hover .detail  {
+.box:hover .detail {
   max-height: none;
   overflow: visible;
   visibility: visible;
@@ -850,11 +938,11 @@ header .flex {
   transition: transform 0.4s cubic-bezier(0.42, 0, 0.58, 1),
     background-color 0.3s ease-in, box-shadow 0.3s ease-in-out; */
 
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    perspective: 800px;
-    transform-style: preserve-3d;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  perspective: 800px;
+  transform-style: preserve-3d;
 }
 
 /* .company .box-container .box:hover {
@@ -1352,7 +1440,7 @@ header .flex {
   border: 2px solid rgba(10, 10, 10, 0.737);
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    margin-bottom: 5rem;
+  margin-bottom: 5rem;
 }
 
 .account-form-container .account-form form h3 {
@@ -1402,7 +1490,7 @@ header .flex {
   margin-left: 15rem;
 }
 
-.footer_image{
+.footer_image {
   width: 15%;
   height: 15%;
   margin-bottom: -14rem;
@@ -1474,7 +1562,6 @@ header .flex {
 }
 
 @media (max-width: 768px) {
-
   .hrline {
     border-top: 1px solid #8c8b8b;
     margin-top: 2rem;
@@ -1577,11 +1664,11 @@ header .flex {
     text-transform: capitalize;
     text-align: center;
   }
-  
+
   .login_btn:hover {
     background-color: var(--black);
   }
-  
+
   .signup_btn {
     display: inline-block;
     /* margin-top: 1rem; */
@@ -1595,7 +1682,7 @@ header .flex {
     text-transform: capitalize;
     text-align: center;
   }
-  
+
   .signup_btn:hover {
     background-color: var(--black);
   }
@@ -1703,23 +1790,106 @@ header .flex {
     margin-top: 9rem;
   }
 
-  .dropdown-container .dropdown {
-    flex: 1 1 12rem;
+  .input-container {
     position: relative;
   }
 
+  .clear-input {
+    position: absolute;
+    margin-left: 33rem;
+    margin-top: -3.3rem;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: #999;
+    cursor: pointer;
+    display: none; /* Hide by default */
+  }
 
-.dropdown-container .dropdown .lists {
-  max-height: 150px; /* Limit the height of the dropdown list */
-  overflow-y: auto; /* Enable vertical scrolling */
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-  /* border: 1px solid #ccc;  */
-  background-color: #fff; /* Ensure the dropdown list has a distinct background */
-  position: absolute; /* Position the dropdown items absolutely */
-  width: 100%; /* Match the width of the parent dropdown */
-  z-index: 10; /* Ensure it appears above other elements */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
-}
+  .input-container input:valid + .clear-input, /* Show cross when there's data */
+  .input-container input:focus + .clear-input {
+    display: block;
+  }
+
+  .dropdown-container .dropdown {
+    flex: 1 1 19rem;
+    position: relative;
+  }
+
+  /* Dropdown Container */
+  .dropdown-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  /* Each Dropdown Box */
+  .dropdown {
+    position: relative;
+    width: 200px;
+    border: 1px solid #b4b1b1;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  /* Clear Filter (×) button */
+  .clear-filter {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 25px;
+    color: #727272;
+    cursor: pointer;
+    display: none;
+  }
+
+  /* Display the cross when the input field has a value */
+  .output:valid + .clear-filter,
+  .output:focus + .clear-filter {
+    display: block;
+  }
+
+  /* List of Filter Options */
+  .lists {
+    display: none;
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 1;
+    top: 100%;
+    border-radius: 0 0 5px 5px;
+  }
+
+  /* Show the list when input is focused */
+  .dropdown:hover .lists,
+  .output:focus + .clear-filter + .lists {
+    display: block;
+  }
+
+  .items:hover {
+    background-color: #f1f1f1;
+  }
+
+  /* Focused Item Highlight */
+  .items:focus {
+    background-color: #dcdcdc;
+  }
+
+  .dropdown-container .dropdown .lists {
+    max-height: 150px; /* Limit the height of the dropdown list */
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    /* border: 1px solid #ccc;  */
+    background-color: #fff; /* Ensure the dropdown list has a distinct background */
+    position: absolute; /* Position the dropdown items absolutely */
+    width: 100%; /* Match the width of the parent dropdown */
+    z-index: 10; /* Ensure it appears above other elements */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
+  }
 
   .home-container .home {
     min-height: 75vh;
@@ -1757,13 +1927,12 @@ header .flex {
     margin-top: 3rem;
   }
 
-
   .company .box-container .box {
     width: 115%;
     margin-left: -2.5rem;
   }
 
-  .company  {
+  .company {
     margin-top: 3rem;
   }
 
@@ -1816,7 +1985,7 @@ header .flex {
     align-items: flex-start;
   }
 
-  .footer_image{
+  .footer_image {
     width: 48%;
     height: 48%;
     margin-left: 10rem;

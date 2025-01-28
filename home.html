@@ -54,6 +54,7 @@
                 maxlength="20"
                 class="input"
               />
+              <span class="clear-input" onclick="clearInput('title')">×</span>
             </div>
 
             <div class="field2">
@@ -66,11 +67,13 @@
                 maxlength="50"
                 class="input"
               />
+              <span class="clear-input" onclick="clearInput('location')">×</span>
             </div>
           </div>
           <div class="dropdown-container">
             <div class="dropdown">
               <input type="text" readonly placeholder="date posted"  name="date" maxlength="20" class="output">
+              <span class="clear-filter" onclick="clearFilter('date')">×</span>
               <div class="lists">
                 <p class="items">2 days ago</p>
                 <p class="items">3 days ago</p>
@@ -82,7 +85,8 @@
             </div>
 
             <div class="dropdown">
-              <input type="text" readonly placeholder="Pay" name="date"  maxlength="20" class="output">
+              <input type="text" readonly placeholder="Pay" name="pay"  maxlength="20" class="output">
+              <span class="clear-filter" onclick="clearFilter('pay')">×</span>
               <div class="lists">
                 <p class="items">1000 - less</p>
                 <p class="items">1000 - 5000</p>
@@ -90,7 +94,6 @@
                 <p class="items">10,000 - 20,000</p>
                 <p class="items">20,000 - 50,000</p>
                 <p class="items">50,000 - 1,00,000</p>
-                <!-- <p class="items">3,00,000 - 5,00,000</p> -->
                 <p class="items">1,00,000 - 10,00,000</p>
                 <p class="items">10,00,000 - 20,00,000</p>
                 <p class="items">20,00,000 - 50,00,000</p>
@@ -98,7 +101,8 @@
             </div>
 
             <div class="dropdown">
-              <input type="text" readonly placeholder="Job type" name="date" maxlength="20" class="output">
+              <input type="text" readonly placeholder="Job type" name="Job_type" maxlength="20" class="output">
+              <span class="clear-filter" onclick="clearFilter('Job_type')">×</span>
               <div class="lists">
                 <p class="items">Full-Time</p>
                 <p class="items">Part-Time</p>
@@ -110,7 +114,8 @@
             </div>
 
             <div class="dropdown">
-              <input type="text" readonly placeholder="Work shift" name="date" maxlength="20" class="output">
+              <input type="text" readonly placeholder="Work shift" name="work_shift" maxlength="20" class="output">
+              <span class="clear-filter" onclick="clearFilter('work_shift')">×</span>
               <div class="lists">
                 <p class="items">Day shift</p>
                 <p class="items">Fixed Shift</p>
